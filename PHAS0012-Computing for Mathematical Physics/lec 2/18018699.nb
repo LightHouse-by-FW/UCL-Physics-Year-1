@@ -1,0 +1,1086 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     46004,       1078]
+NotebookOptionsPosition[     40563,       1003]
+NotebookOutlinePosition[     41409,       1031]
+CellTagsIndexPosition[     41366,       1028]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[StyleBox["PHAS0012 (1449) Computing for Mathematical Physics  \
+2018/19",
+ FontFamily->"Gill Sans MT",
+ FontSize->36,
+ FontColor->RGBColor[0.5, 0, 0.5]]], "Subtitle",
+ CellChangeTimes->{{3.725026163409854*^9, 3.72502616476091*^9}, {
+   3.725050500981072*^9, 3.725050502853321*^9}, 3.7553445928754253`*^9},
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[
+  1, 0, 0],ExpressionUUID->"f5719df8-fa83-4fe8-afb1-defda8c17687"],
+
+Cell[TextData[StyleBox["Homework 3",
+ FontSize->24,
+ FontColor->GrayLevel[0.5]]], "Title",
+ CellChangeTimes->{
+  3.724350863230672*^9, {3.7554377965759945`*^9, 3.7554377970610547`*^9}, {
+   3.755437883966379*^9, 3.7554378986990423`*^9}, {3.755438238681673*^9, 
+   3.755438269628213*^9}, {3.7556100400708838`*^9, 3.7556100406176205`*^9}, 
+   3.7556102568192472`*^9, {3.756505681553753*^9, 3.756505681788164*^9}, {
+   3.757103637090299*^9, 3.7571036377702055`*^9}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[
+  1, 0, 0],ExpressionUUID->"f2d3e093-4ec6-40c5-b185-3c59ba978920"],
+
+Cell[TextData[{
+ StyleBox["Mark for homework 3:   \t\t/35\n",
+  FontSize->24,
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox["(to be competed by your marker)",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 1]]
+}], "Title",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{
+  3.724350863230672*^9, {3.7554377965759945`*^9, 3.7554377970610547`*^9}, {
+   3.755437883966379*^9, 3.7554378986990423`*^9}, {3.755438238681673*^9, 
+   3.755438269628213*^9}, {3.7556100400708838`*^9, 3.7556100406176205`*^9}, 
+   3.7556102593969035`*^9, {3.755610309382546*^9, 3.7556103428416023`*^9}, 
+   3.755610433287775*^9, 3.7556107927551785`*^9, {3.7556108468979297`*^9, 
+   3.7556108555696487`*^9}, {3.7565056838908806`*^9, 3.756505684031426*^9}, {
+   3.756505719469152*^9, 3.7565057204026833`*^9}, {3.7571036326603785`*^9, 
+   3.757103640164131*^9}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[
+  1, 0, 0],ExpressionUUID->"b44cf058-ec71-428a-a9e4-31cdda19dfc3"],
+
+Cell[TextData[{
+ StyleBox["Feedback from marker:",
+  FontSize->24,
+  FontColor->RGBColor[1., 0., 1.]],
+ StyleBox["\n",
+  FontSize->24],
+ StyleBox["(to be competed by your marker)",
+  FontSize->18,
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox["\n\n",
+  FontSize->24]
+}], "Title",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{
+  3.724350863230672*^9, {3.7554377965759945`*^9, 3.7554377970610547`*^9}, {
+   3.755437883966379*^9, 3.7554378986990423`*^9}, {3.755438238681673*^9, 
+   3.755438269628213*^9}, {3.7556100400708838`*^9, 3.7556100406176205`*^9}, 
+   3.7556102593969035`*^9, {3.755610309382546*^9, 3.7556103428416023`*^9}, 
+   3.755610458790455*^9, 3.7556108665835867`*^9},
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[
+  1, 0, 0],ExpressionUUID->"05e1e3ba-7aa4-4a8b-ad50-ccf054f3b9ec"],
+
+Cell[TextData[{
+ StyleBox["Which ",
+  FontSize->24,
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox["feedback from your last homework",
+  FontSize->24,
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox[" are you ",
+  FontSize->24,
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox["employing in this homework",
+  FontSize->24,
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox["? \n",
+  FontSize->24,
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox["Marks will be deducted",
+  FontSize->24,
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox[" if you do not",
+  FontSize->24,
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox[" ",
+  FontSize->24,
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox["complete this section. ",
+  FontSize->24,
+  FontColor->RGBColor[1, 0, 1]],
+ StyleBox["- My homework feedback only talked about learning to use the Limit \
+function correctly, which in this case is not applicable. But I am employing \
+the use of more description in some of my answers and trying to read the \
+question more carefully, while giving more full answers.",
+  FontSize->24,
+  FontColor->GrayLevel[0]],
+ StyleBox["\n\n\n",
+  FontSize->24]
+}], "Title",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{
+  3.724350863230672*^9, {3.7554377965759945`*^9, 3.7554377970610547`*^9}, {
+   3.755437883966379*^9, 3.7554378986990423`*^9}, {3.755438238681673*^9, 
+   3.755438269628213*^9}, {3.7556100400708838`*^9, 3.7556100406176205`*^9}, 
+   3.7556102593969035`*^9, {3.755610309382546*^9, 3.7556103428416023`*^9}, 
+   3.755610458790455*^9, {3.75561050591443*^9, 3.7556105642945957`*^9}, {
+   3.755610660170329*^9, 3.7556106612502966`*^9}, {3.755610889451978*^9, 
+   3.7556108959445453`*^9}, {3.7556113066600285`*^9, 3.755611375699606*^9}, {
+   3.7558957825659647`*^9, 3.75589579503927*^9}, {3.7565057292846513`*^9, 
+   3.756505732762686*^9}, {3.757654389463414*^9, 3.7576545071841593`*^9}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[
+  1, 0, 0],ExpressionUUID->"0adfd272-3a02-4cec-9d1d-c11740ad9fb8"],
+
+Cell[TextData[StyleBox["Give your answers in the code cells labelled \
+\[OpenCurlyDoubleQuote](*your solution here*)\[CloseCurlyDoubleQuote]",
+ FontSize->24,
+ FontColor->RGBColor[0.5, 0, 0.5]]], "Title",
+ CellFrame->{{0, 0}, {0, 3}},
+ CellChangeTimes->{
+  3.724350863230672*^9, {3.7554377965759945`*^9, 3.7554377970610547`*^9}, {
+   3.755437883966379*^9, 3.7554378986990423`*^9}, {3.755438238681673*^9, 
+   3.755438269628213*^9}, {3.7556100400708838`*^9, 3.7556100406176205`*^9}, 
+   3.7556102593969035`*^9},
+ ImageRegion->{{0, 1}, {0, 1}},
+ FontColor->RGBColor[
+  1, 0, 0],ExpressionUUID->"c985b499-3745-478a-9085-52373b7e48d6"],
+
+Cell[TextData[{
+ StyleBox["1.",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" Solve the simultaneous equations \n       ",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "2"], " ", "+", " ", 
+     RowBox[{"2", "y"}]}], " ", "=", " ", "1"}], 
+   TraditionalForm], "\[IndentingNewLine]", 
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "2"], " ", "-", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["y", "2"]}]}], " ", "=", "10"}], TraditionalForm]}],
+  FontColor->RGBColor[0, 0, 1],ExpressionUUID->
+  "53f07a08-60c0-4525-a642-e8aab903d43e"],
+ StyleBox["\nCheck all the solutions by substituting them back into the \
+original equations and using ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Simplify",
+  FontFamily->"Courier New",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" if necessary. ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["[4 marks]",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text",
+ CellChangeTimes->{{3.534594324725788*^9, 3.534594341280735*^9}, {
+  3.5345950769898148`*^9, 3.5345951010041885`*^9}, {3.5661381943897905`*^9, 
+  3.5661382147049522`*^9}, {3.5666558436265874`*^9, 3.5666558465627556`*^9}, {
+  3.630045335027754*^9, 3.63004537107903*^9}, {3.6606283144010477`*^9, 
+  3.660628326804158*^9}, {3.755344629943536*^9, 3.7553446300952454`*^9}, {
+  3.755345404729158*^9, 3.755345404776161*^9}, {3.755437806867063*^9, 
+  3.755437854496848*^9}, {3.7565057738304195`*^9, 3.7565057894939985`*^9}, {
+  3.7571036983229036`*^9, 
+  3.7571037150106764`*^9}},ExpressionUUID->"1a6334ad-314e-46fe-89cb-\
+0aae6817ebaf"],
+
+Cell[BoxData[{
+ RowBox[{"q1eq1", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "2"], " ", "+", " ", 
+    RowBox[{"2", "y"}]}], " ", "\[Equal]", "  ", 
+   "1"}]}], "\[IndentingNewLine]", 
+ RowBox[{"q1eq2", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "2"], " ", "-", 
+    RowBox[{"3", " ", 
+     SuperscriptBox["y", "2"]}]}], " ", "\[Equal]", " ", "10"}]}]}], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+   3.755610037258995*^9, 3.7556100378370075`*^9}, 3.757591807672626*^9, {
+   3.757591860771316*^9, 3.757591905074296*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"6cbd6d2b-afb4-42c6-9d9c-38892290c52d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Simplify", "[", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"q1eq1", ",", " ", "q1eq2"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}], "]"}], "]"}], " ", "//", 
+  "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.7575919161367683`*^9, 3.7575919595003443`*^9}, {
+  3.7576001456096907`*^9, 3.7576001480835857`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"3acc26d8-c293-4783-9951-f637de2f45e6"],
+
+Cell[TextData[{
+ StyleBox["2.",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" This is an exercise on the Taylor series.  You may wish to \
+refresh your memory on what Taylor\[CloseCurlyQuote]s series is by looking in \
+a text book or Wikipedia. Proceed as follows: ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["[9 marks]\n",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["(i) Construct a list containing ",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"sin", "(", 
+     RowBox[{"\[Pi]", " ", "x"}], ")"}], 
+    RowBox[{"log", "(", 
+     RowBox[{"1", "+", "x"}], ")"}]}], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1],ExpressionUUID->
+  "8d27f9da-4a48-4a94-9413-7cd1dcecc91f"],
+ StyleBox[" and its first 4 derivatives with respect to ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["x",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[". ",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text",
+ CellChangeTimes->{{3.534595128815779*^9, 3.5345951709251876`*^9}, {
+   3.5345955608544903`*^9, 3.534595577562446*^9}, {3.5345956450783076`*^9, 
+   3.5345956624653025`*^9}, {3.5661382229224224`*^9, 
+   3.5661382794446554`*^9}, {3.566138339826109*^9, 3.566138343326309*^9}, 
+   3.630045447629331*^9, 3.659776980195835*^9, 3.660628308805133*^9, {
+   3.7243509638953876`*^9, 3.7243509695949373`*^9}, {3.7553453163465595`*^9, 
+   3.755345333115673*^9}, {3.7553456434731717`*^9, 3.7553456456729684`*^9}, {
+   3.7565057971147895`*^9, 3.75650580820205*^9}, {3.757103728893093*^9, 
+   3.7571037445130744`*^9}},ExpressionUUID->"d879a8e9-4e08-40bb-9465-\
+39f054e17450"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "x", "]"}]], "Input",
+ CellChangeTimes->{{3.7575923715349207`*^9, 3.757592378054966*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"4591378c-c25c-4736-bbe5-90428628db4c"],
+
+Cell[BoxData[
+ RowBox[{"q2function1", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"\[Pi]", " ", "x"}], "]"}], 
+   RowBox[{"Log", "[", 
+    RowBox[{"1", "+", "x"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.757592267378981*^9, 3.757592332918026*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"7b05bcf9-4bdf-4a1f-bce3-98f989f72079"],
+
+Cell[BoxData[
+ RowBox[{"q2table1", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{"q2function1", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", " ", "i"}], "}"}]}], "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "0", " ", ",", "4"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+   3.755610037258995*^9, 3.7556100378370075`*^9}, {3.757592169010219*^9, 
+   3.7575921715697803`*^9}, {3.7575922375479813`*^9, 3.75759225152328*^9}, {
+   3.757592386121051*^9, 3.757592389280991*^9}, {3.757592430122181*^9, 
+   3.757592435312683*^9}, {3.757592859624262*^9, 3.7575928643337183`*^9}, {
+   3.757595958642818*^9, 3.75759596385181*^9}, {3.757600897676175*^9, 
+   3.757600899474169*^9}, 3.757656545303907*^9},
+ CellLabel->"In[18]:=",ExpressionUUID->"c2eeecab-c5e1-482c-9fca-fca800461850"],
+
+Cell[TextData[{
+ StyleBox["(ii) Use a rule to convert this to a second list giving the values \
+of ",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"sin", "(", 
+     RowBox[{"\[Pi]", " ", "x"}], ")"}], 
+    RowBox[{"log", "(", 
+     RowBox[{"1", "+", "x"}], ")"}]}], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1],ExpressionUUID->
+  "9557d219-0b48-440f-987e-362da1c27ea3"],
+ StyleBox[" and its derivatives at ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["x",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["=",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["3", TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1],ExpressionUUID->
+  "fe27e1b1-6128-4afb-84b4-d98f2e8679e9"],
+ StyleBox[". ",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text",
+ CellChangeTimes->{{3.5345957791539764`*^9, 3.534595799339131*^9}, {
+   3.56613837760927*^9, 3.5661383927421355`*^9}, {3.5661385013033447`*^9, 
+   3.5661386082024593`*^9}, {3.566142883007964*^9, 3.566142883423988*^9}, 
+   3.6300469764577637`*^9, 3.659777001612808*^9, 3.662189447056799*^9, {
+   3.7553456299021997`*^9, 3.755345639433195*^9}, {3.7553456934489365`*^9, 
+   3.755345735433754*^9}, {3.7553458072774987`*^9, 3.75534582108744*^9}, 
+   3.7565058219225655`*^9, 
+   3.7571037633753433`*^9},ExpressionUUID->"c624bc5c-4f5c-4011-a120-\
+e1a85fe9aebe"],
+
+Cell[BoxData[
+ RowBox[{"q2table2", " ", "=", " ", 
+  RowBox[{"q2table1", "/.", 
+   RowBox[{"x", "\[Rule]", " ", "3"}]}]}]], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+   3.755610037258995*^9, 3.7556100378370075`*^9}, 3.757595803345957*^9, {
+   3.7575959460443707`*^9, 3.75759597829331*^9}, {3.757596103058296*^9, 
+   3.757596142674844*^9}, {3.7576553756895103`*^9, 3.757655393638185*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"68d72e21-ec2a-4276-9c33-29298fac8766"],
+
+Cell[TextData[{
+ StyleBox["(iii) Construct another list containing ",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"x", "-", "3"}], ")"}], "n"], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1],ExpressionUUID->
+  "12b74662-adbf-4d64-832e-b2aaa7c19e7a"],
+ StyleBox["/",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["n",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["! for ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["n",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["=0,1,..4.  ",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text",
+ CellChangeTimes->{{3.5345970580541253`*^9, 3.5345971606769953`*^9}, 
+   3.5345972166581964`*^9, {3.53459736864789*^9, 3.534597369205922*^9}, {
+   3.56613906085635*^9, 3.566139110961215*^9}, 3.6300477289389553`*^9, {
+   3.6597773096435127`*^9, 3.659777332883196*^9}, {3.659777395892226*^9, 
+   3.659777441505227*^9}, {3.6612325541498613`*^9, 3.661232555197771*^9}, {
+   3.7553461971397347`*^9, 3.755346215024062*^9}, {3.7553462502740583`*^9, 
+   3.7553462509423065`*^9}, 3.7565058332858396`*^9, 
+   3.7571037770874643`*^9},ExpressionUUID->"95d9cc39-6f80-45b1-a0ba-\
+6a3a5c301e99"],
+
+Cell[BoxData[
+ RowBox[{"q2function2", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", "3"}], ")"}], "^", "n"}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{"n", "!"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.7575966383293543`*^9, 3.757596656867714*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"6f7074c8-3d17-49c9-a65c-d8ba8aeece16"],
+
+Cell[BoxData[
+ RowBox[{"q2table3", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{"q2function2", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", " ", "4"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+  3.755610037258995*^9, 3.7556100378370075`*^9}, {3.757596365059483*^9, 
+  3.757596407816881*^9}, {3.757596490254909*^9, 3.7575965805668907`*^9}, {
+  3.757596624980846*^9, 3.757596626623291*^9}, {3.757596671498961*^9, 
+  3.757596700219164*^9}, {3.757596788557765*^9, 3.7575967924763002`*^9}, {
+  3.75765538136974*^9, 3.7576553817180853`*^9}, {3.757656539695636*^9, 
+  3.757656541077742*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"82610978-2a77-48ea-972b-7a8b3808b107"],
+
+Cell[TextData[{
+ StyleBox["(iv) Hence find the terms up to ",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "4"], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1],ExpressionUUID->
+  "27d0e398-a432-4210-a780-98800ec0d54d"],
+ StyleBox[" in the expansion of ",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"sin", "(", 
+     RowBox[{"\[Pi]", " ", "x"}], ")"}], 
+    RowBox[{"log", "(", 
+     RowBox[{"1", "+", "x"}], ")"}]}], TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1],ExpressionUUID->
+  "df16f253-a144-4b8d-a1af-55a6f3f07025"],
+ StyleBox[" about ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["x",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["=",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox["3", TraditionalForm]],
+  FontColor->RGBColor[0, 0, 1],ExpressionUUID->
+  "7e3dadf1-8058-450c-9d13-f75fd253fa96"],
+ StyleBox[".",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text",
+ CellChangeTimes->{{3.5345970580541253`*^9, 3.5345971606769953`*^9}, 
+   3.5345972166581964`*^9, {3.53459736864789*^9, 3.534597369205922*^9}, {
+   3.56613906085635*^9, 3.566139110961215*^9}, 3.6300477289389553`*^9, {
+   3.6597773096435127`*^9, 3.659777332883196*^9}, {3.659777395892226*^9, 
+   3.659777441505227*^9}, {3.6612325541498613`*^9, 3.661232555197771*^9}, {
+   3.7553461971397347`*^9, 3.755346215024062*^9}, {3.7553462502740583`*^9, 
+   3.7553462509423065`*^9}, 3.7565058332858396`*^9, {3.7571037770874643`*^9, 
+   3.757103826153304*^9}},ExpressionUUID->"e3a3d916-9512-43ef-a9ea-\
+28dcc61d1446"],
+
+Cell[BoxData[
+ RowBox[{"q2taylor1", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Expand", "[", 
+    RowBox[{"{", 
+     RowBox[{"q2table2", " ", ".", " ", "q2table3"}], "}"}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+   3.755610037258995*^9, 3.7556100378370075`*^9}, 3.757596912225868*^9, {
+   3.7576549983539467`*^9, 3.75765501115415*^9}, {3.757655085158526*^9, 
+   3.757655188516227*^9}, {3.7576552993754272`*^9, 3.7576553380865383`*^9}, {
+   3.75765540043883*^9, 3.7576554028548527`*^9}, {3.757655444579516*^9, 
+   3.7576554645785303`*^9}, {3.757655505595269*^9, 3.7576556030140657`*^9}, {
+   3.757655647915722*^9, 3.757655652936558*^9}, {3.757655683206517*^9, 
+   3.7576557007325907`*^9}, {3.757655780481213*^9, 3.7576558526557217`*^9}, {
+   3.757655896193462*^9, 3.757656052990106*^9}, {3.757656107428759*^9, 
+   3.7576561812368517`*^9}, {3.757656499302112*^9, 3.757656593038764*^9}, {
+   3.757656650736555*^9, 3.757656777033169*^9}, {3.757657083907095*^9, 
+   3.757657085681209*^9}, {3.757657183467977*^9, 3.7576571903437643`*^9}, {
+   3.757657702480945*^9, 3.757657731439288*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"91dabb8d-c265-473a-8cdb-b447116011ca"],
+
+Cell[TextData[{
+ StyleBox["(v) Check your result using the built-in ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Mathematica",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" function ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Series",
+  FontFamily->"Courier New",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[". ",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text",
+ CellChangeTimes->{{3.5345970580541253`*^9, 3.5345971606769953`*^9}, 
+   3.5345972166581964`*^9, {3.53459736864789*^9, 3.534597369205922*^9}, {
+   3.56613906085635*^9, 3.566139110961215*^9}, 3.6300477289389553`*^9, {
+   3.6597773096435127`*^9, 3.659777332883196*^9}, {3.659777395892226*^9, 
+   3.659777441505227*^9}, {3.6612325541498613`*^9, 3.661232555197771*^9}, {
+   3.7553461971397347`*^9, 3.755346215024062*^9}, {3.7553462502740583`*^9, 
+   3.7553462509423065`*^9}, 3.7565058332858396`*^9, {3.7571037770874643`*^9, 
+   3.757103833620618*^9}},ExpressionUUID->"f43d39d1-efe5-496a-a415-\
+bac1a2f3ff52"],
+
+Cell[BoxData[
+ RowBox[{"q2taylor2", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{"q2function1", ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "3", ",", "4"}], "}"}]}], "]"}], "]"}], " ", "//", 
+   "Expand"}]}]], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+  3.755610037258995*^9, 3.7556100378370075`*^9}, {3.757656957896986*^9, 
+  3.757656960821267*^9}, {3.757657014895812*^9, 3.75765720232043*^9}, {
+  3.757657618992589*^9, 3.757657624371008*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"1e3fd569-2ddf-4f2f-99ff-fa4c4478abb6"],
+
+Cell[TextData[{
+ StyleBox["3.",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" Use ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["RealDigits[N[Catalan,1000]][[1]] ",
+  FontFamily->"Courier New",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["to generate a list of 1000  digits of the Catalan number. Use a \
+rule with a condition (/;) based on ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["OddQ",
+  FontFamily->"Courier New",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" to convert every odd digit in the list to a letter o, and hence \
+find how many odd digits there are in the list. Do the same for even digits, \
+using the letter e. Check your results using the ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Cases",
+  FontFamily->"Courier",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" function on the original list. ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["[6 marks]",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text",
+ CellChangeTimes->{{3.5345984889219666`*^9, 3.5345986190194073`*^9}, 
+   3.5345986615048375`*^9, {3.5661393597704463`*^9, 3.5661393700860367`*^9}, {
+   3.5661395800300446`*^9, 3.566139582342177*^9}, {3.566139727951505*^9, 
+   3.56613975268392*^9}, {3.5661432346640778`*^9, 3.5661432404114065`*^9}, {
+   3.630049718551488*^9, 3.630049719631669*^9}, {3.659777745674859*^9, 
+   3.659777771825706*^9}, {3.661232568902467*^9, 3.6612325690047092`*^9}, {
+   3.7565058400929747`*^9, 3.756505854724272*^9}, 
+   3.7571038762907486`*^9},ExpressionUUID->"219fb869-fbca-49de-b2eb-\
+cffc693d218c"],
+
+Cell["\<\
+Converting all odd numbers generated into \[OpenCurlyDoubleQuote]o\
+\[CloseCurlyDoubleQuote]s and then counting the number of \
+\[OpenCurlyDoubleQuote]o\[CloseCurlyDoubleQuote]s in the list to know how \
+many odd numbers are in the list\
+\>", "Text",
+ CellChangeTimes->{{3.757660832165805*^9, 
+  3.7576608940096884`*^9}},ExpressionUUID->"8d46ab59-5393-4c16-bd70-\
+4881c7f70714"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"q3list1", " ", "=", " ", 
+   RowBox[{
+    StyleBox[
+     RowBox[{
+      RowBox[{"RealDigits", "[", 
+       RowBox[{"N", "[", 
+        RowBox[{"Catalan", ",", "1000"}], "]"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}],
+     FontFamily->"Courier New",
+     FontColor->RGBColor[0, 0, 1]], "/.", 
+    RowBox[{
+     RowBox[{"x_", "/;", 
+      RowBox[{"OddQ", "[", "x", "]"}]}], " ", "\[Rule]", "o"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+   3.755610037258995*^9, 3.7556100378370075`*^9}, 3.7575973189257298`*^9, {
+   3.757597367626459*^9, 3.757597377838141*^9}, {3.757597515068357*^9, 
+   3.7575975477058153`*^9}, {3.757597602415348*^9, 3.757597625932743*^9}, 
+   3.757597681738207*^9, {3.75759833479502*^9, 3.757598362833132*^9}, {
+   3.7576002818712673`*^9, 3.757600284875519*^9}, {3.757600336147094*^9, 
+   3.75760035656081*^9}, {3.757600519241186*^9, 3.7576006159925528`*^9}, 
+   3.757622276800212*^9, {3.757622463872892*^9, 3.757622467447918*^9}, {
+   3.757636541486511*^9, 3.757636546820981*^9}, {3.757638327618394*^9, 
+   3.7576383340252533`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"512cdcbd-1a3b-4b28-974d-4f2ed0ca524d"],
+
+Cell[BoxData[
+ RowBox[{"Count", "[", 
+  RowBox[{"q3list1", ",", " ", "o"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7575976927150793`*^9, 3.757597707024186*^9}, {
+  3.7575977512187653`*^9, 3.757597755584752*^9}, {3.7576005583540487`*^9, 
+  3.7576005585826693`*^9}, {3.757638338756062*^9, 3.757638338968788*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"e193ff12-6f9a-4322-b22f-0199c4afbdea"],
+
+Cell["\<\
+Using the Case function to remove all non-odd numbers and then counting the \
+length of that list to know how many odd numbers their are\
+\>", "Text",
+ CellChangeTimes->{{3.7576608159740334`*^9, 3.757660816942463*^9}, {
+  3.7576609290401278`*^9, 
+  3.7576609734006367`*^9}},ExpressionUUID->"188a2508-d852-4ee7-95b8-\
+a238a7fdcea0"],
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"Cases", "[", 
+   RowBox[{
+    StyleBox[
+     RowBox[{
+      RowBox[{"RealDigits", "[", 
+       RowBox[{"N", "[", 
+        RowBox[{"Catalan", ",", "1000"}], "]"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}],
+     FontFamily->"Courier New",
+     FontColor->RGBColor[0, 0, 1]], 
+    StyleBox[",",
+     FontFamily->"Courier New",
+     FontColor->RGBColor[0, 0, 1]], 
+    RowBox[{"x_", "/;", 
+     RowBox[{"OddQ", "[", "x", "]"}]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7576367728789454`*^9, 3.757636782023211*^9}, {
+  3.757636818969561*^9, 3.757636825526125*^9}, {3.757637012778729*^9, 
+  3.7576371654581347`*^9}, {3.7576372097153273`*^9, 3.757637339019808*^9}, {
+  3.757638177643406*^9, 3.757638210519702*^9}, {3.757638354129397*^9, 
+  3.757638358137747*^9}, {3.7576383918758698`*^9, 3.757638403458453*^9}, {
+  3.757638501559743*^9, 3.7576385079330063`*^9}, {3.757638554681389*^9, 
+  3.757638709537952*^9}, {3.757638757208178*^9, 3.757638846301662*^9}, {
+  3.757638890617921*^9, 3.757638995165522*^9}, {3.757639102431902*^9, 
+  3.757639138256195*^9}, {3.757642911963375*^9, 3.757642962889686*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"43065d93-e7c2-4fdd-8947-d7e5b81083dc"],
+
+Cell["\<\
+Converting all even numbers generated into \[OpenCurlyDoubleQuote]e\
+\[CloseCurlyDoubleQuote]s and then counting the number of \
+\[OpenCurlyDoubleQuote]e\[CloseCurlyDoubleQuote]s in the list to know how \
+many even numbers are in the list\
+\>", "Text",
+ CellChangeTimes->{{3.757660898435818*^9, 
+  3.757660918328704*^9}},ExpressionUUID->"4d7ced71-bb30-4350-9ce3-\
+df6c40dce3f7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"q3list2", " ", "=", " ", 
+   RowBox[{
+    StyleBox[
+     RowBox[{
+      RowBox[{"RealDigits", "[", 
+       RowBox[{"N", "[", 
+        RowBox[{"Catalan", ",", "1000"}], "]"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}],
+     FontFamily->"Courier New",
+     FontColor->RGBColor[0, 0, 1]], "/.", 
+    RowBox[{
+     RowBox[{"x_", "/;", 
+      RowBox[{"EvenQ", "[", "x", "]"}]}], " ", "\[Rule]", "e"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.757636563466474*^9, 3.7576366108670692`*^9}, {
+  3.757638474605586*^9, 3.757638485932526*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"b8c984d4-390e-4086-86dd-0311fc7287f8"],
+
+Cell[BoxData[
+ RowBox[{"Count", "[", 
+  RowBox[{"q3list2", ",", " ", "e"}], "]"}]], "Input",
+ CellChangeTimes->{{3.757636623020928*^9, 3.7576366252270527`*^9}, {
+  3.7576574359058313`*^9, 3.757657436246706*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"f2337d60-d39d-404b-b77c-528c8ce9ee2c"],
+
+Cell["\<\
+Using the Case function to remove all non-even numbers and then counting the \
+length of that list to know how many even numbers their are\
+\>", "Text",
+ CellChangeTimes->{{3.757660982441492*^9, 
+  3.757660994473395*^9}},ExpressionUUID->"08ac4fc6-b21f-4237-9332-\
+57711c613c67"],
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"Cases", "[", 
+   RowBox[{
+    StyleBox[
+     RowBox[{
+      RowBox[{"RealDigits", "[", 
+       RowBox[{"N", "[", 
+        RowBox[{"Catalan", ",", "1000"}], "]"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}],
+     FontFamily->"Courier New",
+     FontColor->RGBColor[0, 0, 1]], 
+    StyleBox[",",
+     FontFamily->"Courier New",
+     FontColor->RGBColor[0, 0, 1]], 
+    RowBox[{"x_", "/;", 
+     RowBox[{"EvenQ", "[", "x", "]"}]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.757642978233872*^9, 3.7576429857543592`*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"aa144171-470f-439c-b40e-90a4a6667a59"],
+
+Cell[TextData[{
+ StyleBox["4.",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" Write a rule, or list of rules, that when applied to an object \
+will make all negative numbers positive, but will leave anything else \
+unchanged. Your rule should work with a variety of ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Mathematica",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" constructs (eg. single numbers, lists, nested lists, expressions \
+etc). By writing a selection of tests for your rule, explore its range of \
+operation for different objects. You should construct at least four \
+appropriate test cases. Describe why each test case is useful and distinct. \
+An explanation of a test case should be about one or two lines long. ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["[10 marks]",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text",
+ CellChangeTimes->{{3.5345966069233217`*^9, 3.534596608129391*^9}, {
+   3.5661386844208183`*^9, 3.56613869877664*^9}, {3.5661387361777787`*^9, 
+   3.5661387399129925`*^9}, {3.566138875126726*^9, 3.566138883159186*^9}, {
+   3.630047104526614*^9, 3.630047106060973*^9}, {3.659777297349655*^9, 
+   3.6597772987000637`*^9}, {3.661232572668859*^9, 3.6612325728126287`*^9}, {
+   3.756505873223524*^9, 3.7565058923711605`*^9}, 
+   3.7571038967507415`*^9},ExpressionUUID->"903a1616-7053-4463-b5db-\
+0a005b905ee6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"q4rule1", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x_", " ", "/;", " ", 
+      RowBox[{"x", "<", "0"}]}], "\[Rule]", " ", 
+     RowBox[{"-", "x"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+   3.755610037258995*^9, 3.7556100378370075`*^9}, {3.757600763486925*^9, 
+   3.757600806302061*^9}, {3.7576008646993427`*^9, 3.757600871128232*^9}, 
+   3.7576009318676443`*^9, {3.757622968872478*^9, 3.757622993422936*^9}, {
+   3.7576390135427647`*^9, 3.757639042115163*^9}, {3.75763908995989*^9, 
+   3.7576390955986032`*^9}, {3.757639181071732*^9, 3.757639241843485*^9}, {
+   3.757639281725174*^9, 3.7576392907725897`*^9}, {3.757639471677494*^9, 
+   3.7576394775047483`*^9}, {3.757639592090238*^9, 3.75763960263264*^9}, {
+   3.7576397237476873`*^9, 3.7576397300089617`*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"23648db8-2a60-41d4-ae7a-1066ec328a78"],
+
+Cell["\<\
+This test case uses a single number and shows that the rule is able to be \
+applied to single numbers\
+\>", "Text",
+ CellChangeTimes->{{3.757661224872324*^9, 
+  3.757661286497688*^9}},ExpressionUUID->"412697d9-bd72-468b-9324-\
+8db15e3997fe"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "3"}], " ", "/.", "q4rule1"}]], "Input",
+ CellChangeTimes->{{3.757639255920298*^9, 3.75763927281538*^9}, {
+   3.757639460447047*^9, 3.757639484349413*^9}, 3.757639542663331*^9, {
+   3.7576395834516172`*^9, 3.7576395871139593`*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"b4e3742d-4902-4479-a304-821198951da9"],
+
+Cell["\<\
+This test case uses a list and shows that the rule is able to be applied to \
+lists\
+\>", "Text",
+ CellChangeTimes->{{3.7576612911652217`*^9, 
+  3.7576613084969716`*^9}},ExpressionUUID->"cb28fe4a-fb7a-4a8c-8f79-\
+e395bbee06e9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"-", "3"}], ",", "1", ",", "2", ",", 
+    RowBox[{"-", "10"}], ",", 
+    RowBox[{"-", "12"}]}], "}"}], "/.", "q4rule1"}]], "Input",
+ CellChangeTimes->{{3.75763981486283*^9, 3.757639836286161*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"533e8974-e781-416b-8a0b-a919d4ef3302"],
+
+Cell["\<\
+This test case uses a nested list and shows that the rule is able to be \
+applied to nested lists\
+\>", "Text",
+ CellChangeTimes->{{3.757661311698385*^9, 
+  3.757661338929658*^9}},ExpressionUUID->"c167f49c-75f6-4149-8b77-\
+8b800584a63e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"-", "3"}]}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "4"}], ",", 
+      RowBox[{"-", "5"}], ",", "6"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "7"}], ",", "8", ",", "9"}], "}"}]}], "}"}], "/.", 
+  "q4rule1"}]], "Input",
+ CellChangeTimes->{{3.757639877641883*^9, 3.757639949180971*^9}, {
+  3.757654809042757*^9, 3.757654851154542*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"71ac72a4-3f78-4df7-be42-827d38aacdd2"],
+
+Cell["\<\
+This test case uses a nested list with expressions and shows that the rule is \
+able to be applied to nested lists with expressions. This assuming that the \
+expressions are positive though.\[AliasDelimiter]\[AliasDelimiter]\
+\[AliasDelimiter]\[AliasDelimiter]\[AliasDelimiter]\
+\>", "Text",
+ CellChangeTimes->{{3.757661331714964*^9, 
+  3.757661416444646*^9}},ExpressionUUID->"a18cb2ed-44a7-4a64-9fd0-\
+b08d6498264b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", 
+        RowBox[{"-", "b"}]}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "c"}], ",", 
+      RowBox[{"-", "5"}], ",", "d"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "7"}], ",", "8", ",", "9"}], "}"}]}], "}"}], "/.", 
+  "q4rule1"}]], "Input",
+ CellChangeTimes->{{3.757661142430439*^9, 3.757661199345441*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"796937f3-150b-4bd3-9c65-046f4b514a1b"],
+
+Cell[TextData[{
+ StyleBox["5.",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" The pair of numbers {E,Q} is used to describe a given energy \
+level of a molecule system. The numbers are defined such that E is a positive \
+number and Q is an integer. Write a single rule that can be used with a list \
+of the form {{E1, Q1}, {E2, Q2}, {E3, Q3}...} to replace any pairs where the \
+E is negative or Q is not an integer with the entry \
+{\[OpenCurlyDoubleQuote]Error\[CloseCurlyDoubleQuote]}. Demonstrate the use \
+of your rule with the list {{1.0, 1}, {-2.0, 2}, {1.0, 3}, {2.0, 4.1}, {5.0, \
+5}, {6.0, 6.0}, {7.0, 7}, {-1.0, 8.0}}. Your rule should use two conditions \
+(/;).  ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["[6 marks]",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text",
+ CellChangeTimes->{{3.5345966069233217`*^9, 3.534596608129391*^9}, {
+   3.5661386844208183`*^9, 3.56613869877664*^9}, {3.5661387361777787`*^9, 
+   3.5661387399129925`*^9}, {3.566138875126726*^9, 3.566138883159186*^9}, {
+   3.630047042130542*^9, 3.630047042674408*^9}, {3.659777189775364*^9, 
+   3.6597772009530354`*^9}, {3.6597772680017633`*^9, 3.659777301626933*^9}, {
+   3.661231058703518*^9, 3.661231058823023*^9}, {3.6612311690665293`*^9, 
+   3.6612311694743834`*^9}, {3.7553464577258806`*^9, 
+   3.7553464634554014`*^9}, {3.755346739189579*^9, 3.755346835677616*^9}, {
+   3.75534687991181*^9, 3.7553468984093976`*^9}, {3.755346971353223*^9, 
+   3.7553469718548064`*^9}, {3.7554379972976737`*^9, 3.755438000135991*^9}, 
+   3.756505882461747*^9, 
+   3.7571039071536875`*^9},ExpressionUUID->"63c66ef6-15cb-49a0-b75a-\
+b68139fe000a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"q5rule1", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x_", ",", "y_"}], "}"}], " ", "/;", " ", 
+      RowBox[{"x", "<", "0"}]}], " ", "\[Rule]", " ", "\"\<Error\>\""}], 
+    "}"}]}], " ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"q5rule2", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x_", ",", "y_"}], "}"}], " ", "/;", " ", 
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"y", ",", " ", "1"}], "]"}], "\[NotEqual]", " ", "0"}]}], 
+     "\[Rule]", " ", "\"\<Error\>\""}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.75543802899012*^9, 3.7554380740371265`*^9}, {
+   3.755610037258995*^9, 3.7556100378370075`*^9}, 3.757640800250436*^9, {
+   3.757641170499922*^9, 3.75764117949841*^9}, 3.757642661619377*^9, {
+   3.7576436008828287`*^9, 3.757643601209697*^9}, {3.757643671566618*^9, 
+   3.7576437477124853`*^9}, {3.757643793902513*^9, 3.75764379587731*^9}, {
+   3.757643827559555*^9, 3.757643869574441*^9}, {3.7576439408186274`*^9, 
+   3.757643965757666*^9}, {3.757644002263578*^9, 3.757644059040626*^9}, {
+   3.757644132270851*^9, 3.757644137527343*^9}, {3.757644221215362*^9, 
+   3.757644254279274*^9}, {3.757644313207838*^9, 3.757644326735281*^9}, {
+   3.7576444812876253`*^9, 3.757644589602727*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"24b9a05c-fd27-470b-a3eb-a1eae072d525"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"q5list", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1.0", ",", " ", "1"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2.0"}], ",", " ", "2"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"1.0", ",", " ", "3"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"2.0", ",", " ", "4.1"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"5.0", ",", " ", "5"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"6.0", ",", " ", "6.0"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"7.0", ",", " ", "7"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.0"}], ",", " ", "8.0"}], "}"}]}], "}"}]}], ";"}],
+  FontColor->RGBColor[0, 0, 1]]], "Input",
+ CellChangeTimes->{{3.7576440683746853`*^9, 3.7576440767191553`*^9}, {
+   3.757644594196002*^9, 3.7576446103220463`*^9}, {3.7576610343030314`*^9, 
+   3.757661048585863*^9}, 3.75766108205453*^9},
+ CellLabel->"In[37]:=",ExpressionUUID->"86810abf-387b-4984-81a3-55838ce3ea56"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"q5list", " ", 
+   StyleBox["/.",
+    FontColor->RGBColor[0, 0, 1]], "q5rule1"}], "/.", "q5rule2"}]], "Input",
+ CellChangeTimes->{{3.757661058688884*^9, 3.7576610701233892`*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"49b2b024-f8e8-4ce1-89da-924887b7af3c"],
+
+Cell[TextData[StyleBox["Total marks available: 35",
+ FontWeight->"Bold",
+ FontColor->RGBColor[1, 0, 0]]], "Text",
+ CellChangeTimes->{{3.6300587816274242`*^9, 3.6300587943621197`*^9}, {
+  3.659779066850543*^9, 3.659779066935985*^9}, {3.6627100763205347`*^9, 
+  3.662710076560639*^9}, {3.662735850657501*^9, 3.662735851035707*^9}, {
+  3.662736097235936*^9, 3.662736097592898*^9}, {3.7553714838901777`*^9, 
+  3.7553714844370303`*^9}, {3.7565059085662775`*^9, 3.756505909493001*^9}, {
+  3.75710391416448*^9, 
+  3.757103915023204*^9}},ExpressionUUID->"f72778ea-7924-4b6e-95df-\
+e619607df2e6"],
+
+Cell[TextData[{
+ StyleBox["Solutions are due by ",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["4pm on Monday January 28th.",
+  FontWeight->"Bold",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["\nMake a copy of your solutions with the output deleted (",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["Cell|Delete All Output",
+  FontFamily->"Courier New",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[") and upload that file to Moodle.\nPlease name the file to include \
+your family name and first name, for example I would use ",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["hw1_Jasvir_Bhamrah",
+  FontFamily->"Courier New",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[".\n\nThe first thing I shall do when I get the file is to click ",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["Evaluation|Evaluate Notebook, ",
+  FontFamily->"Courier New",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["so make sure the file you send me will survive that.",
+  FontColor->RGBColor[1, 0, 0]]
+}], "Text",
+ CellChangeTimes->{{3.503730245604706*^9, 3.503730325411271*^9}, {
+  3.5345941263694425`*^9, 3.5345941296526303`*^9}, {3.5345941661737194`*^9, 
+  3.534594292303933*^9}, {3.5661374978679514`*^9, 3.5661375008041196`*^9}, {
+  3.56613754556868*^9, 3.5661375460287066`*^9}, {3.6300584995347767`*^9, 
+  3.630058501598486*^9}, {3.7243516166077967`*^9, 3.724351639483448*^9}, {
+  3.7553714928068905`*^9, 3.755371493053547*^9}, {3.755373762346409*^9, 
+  3.755373762521445*^9}, {3.7565059140390844`*^9, 3.756505922836955*^9}, {
+  3.7571039620340004`*^9, 
+  3.7571039662031546`*^9}},ExpressionUUID->"1620ff94-e668-44c4-9f1a-\
+1e5908826386"],
+
+Cell[TextData[StyleBox["J Bhamrah, J Underwood, L McKemmish\nUCL\nJanuary \
+2019",
+ FontColor->RGBColor[0, 1, 0]]], "Text",
+ CellChangeTimes->{{3.5037302971356535`*^9, 3.5037302983437223`*^9}, {
+  3.5345941347899237`*^9, 3.5345941350249376`*^9}, {3.566137504202314*^9, 
+  3.566137504417326*^9}, {3.630045108697054*^9, 3.630045113872504*^9}, {
+  3.661587441204342*^9, 3.6615874722049828`*^9}, {3.6928651663861637`*^9, 
+  3.692865172689934*^9}, {3.724351501836351*^9, 3.724351502360198*^9}, {
+  3.755371503578415*^9, 
+  3.755371504470949*^9}},ExpressionUUID->"9629efb5-6fc0-4032-a8b2-\
+0de853fadb70"]
+},
+WindowToolbars->{},
+CellGrouping->Manual,
+WindowSize->{775, 872},
+WindowMargins->{{310, Automatic}, {36, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{582.9599999999999, 829.0799999999999}},
+ShowCellLabel->True,
+ShowCellTags->False,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "ProgrammingLabDefault.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, -1}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 440, 9, 125, "Subtitle",ExpressionUUID->"f5719df8-fa83-4fe8-afb1-defda8c17687"],
+Cell[988, 31, 584, 11, 71, "Title",ExpressionUUID->"f2d3e093-4ec6-40c5-b185-3c59ba978920"],
+Cell[1575, 44, 946, 20, 109, "Title",ExpressionUUID->"b44cf058-ec71-428a-a9e4-31cdda19dfc3"],
+Cell[2524, 66, 800, 21, 179, "Title",ExpressionUUID->"05e1e3ba-7aa4-4a8b-ad50-ccf054f3b9ec"],
+Cell[3327, 89, 2043, 54, 397, "Title",ExpressionUUID->"0adfd272-3a02-4cec-9d1d-c11740ad9fb8"],
+Cell[5373, 145, 629, 12, 82, "Title",ExpressionUUID->"c985b499-3745-478a-9085-52373b7e48d6"],
+Cell[6005, 159, 1597, 40, 130, "Text",ExpressionUUID->"1a6334ad-314e-46fe-89cb-0aae6817ebaf"],
+Cell[7605, 201, 672, 16, 56, "Input",ExpressionUUID->"6cbd6d2b-afb4-42c6-9d9c-38892290c52d"],
+Cell[8280, 219, 486, 12, 30, "Input",ExpressionUUID->"3acc26d8-c293-4783-9951-f637de2f45e6"],
+Cell[8769, 233, 1598, 37, 81, "Text",ExpressionUUID->"d879a8e9-4e08-40bb-9465-39f054e17450"],
+Cell[10370, 272, 205, 3, 30, "Input",ExpressionUUID->"4591378c-c25c-4736-bbe5-90428628db4c"],
+Cell[10578, 277, 348, 8, 30, "Input",ExpressionUUID->"7b05bcf9-4bdf-4a1f-bce3-98f989f72079"],
+Cell[10929, 287, 890, 17, 30, "Input",ExpressionUUID->"c2eeecab-c5e1-482c-9fca-fca800461850"],
+Cell[11822, 306, 1358, 35, 58, "Text",ExpressionUUID->"c624bc5c-4f5c-4011-a120-e1a85fe9aebe"],
+Cell[13183, 343, 501, 8, 30, "Input",ExpressionUUID->"68d72e21-ec2a-4276-9c33-29298fac8766"],
+Cell[13687, 353, 1211, 31, 35, "Text",ExpressionUUID->"95d9cc39-6f80-45b1-a0ba-6a3a5c301e99"],
+Cell[14901, 386, 385, 10, 30, "Input",ExpressionUUID->"6f7074c8-3d17-49c9-a65c-d8ba8aeece16"],
+Cell[15289, 398, 742, 13, 30, "Input",ExpressionUUID->"82610978-2a77-48ea-972b-7a8b3808b107"],
+Cell[16034, 413, 1583, 41, 35, "Text",ExpressionUUID->"e3a3d916-9512-43ef-a9ea-28dcc61d1446"],
+Cell[17620, 456, 1246, 20, 30, "Input",ExpressionUUID->"91dabb8d-c265-473a-8cdb-b447116011ca"],
+Cell[18869, 478, 988, 22, 35, "Text",ExpressionUUID->"f43d39d1-efe5-496a-a415-bac1a2f3ff52"],
+Cell[19860, 502, 615, 13, 30, "Input",ExpressionUUID->"1e3fd569-2ddf-4f2f-99ff-fa4c4478abb6"],
+Cell[20478, 517, 1503, 34, 104, "Text",ExpressionUUID->"219fb869-fbca-49de-b2eb-cffc693d218c"],
+Cell[21984, 553, 388, 8, 58, "Text",ExpressionUUID->"8d46ab59-5393-4c16-bd70-4881c7f70714"],
+Cell[22375, 563, 1226, 26, 30, "Input",ExpressionUUID->"512cdcbd-1a3b-4b28-974d-4f2ed0ca524d"],
+Cell[23604, 591, 389, 6, 30, "Input",ExpressionUUID->"e193ff12-6f9a-4322-b22f-0199c4afbdea"],
+Cell[23996, 599, 341, 7, 58, "Text",ExpressionUUID->"188a2508-d852-4ee7-95b8-a238a7fdcea0"],
+Cell[24340, 608, 1241, 26, 30, "Input",ExpressionUUID->"43065d93-e7c2-4fdd-8947-d7e5b81083dc"],
+Cell[25584, 636, 388, 8, 58, "Text",ExpressionUUID->"4d7ced71-bb30-4350-9ce3-df6c40dce3f7"],
+Cell[25975, 646, 659, 18, 30, "Input",ExpressionUUID->"b8c984d4-390e-4086-86dd-0311fc7287f8"],
+Cell[26637, 666, 290, 5, 30, "Input",ExpressionUUID->"f2337d60-d39d-404b-b77c-528c8ce9ee2c"],
+Cell[26930, 673, 288, 6, 58, "Text",ExpressionUUID->"08ac4fc6-b21f-4237-9332-57711c613c67"],
+Cell[27221, 681, 658, 18, 30, "Input",ExpressionUUID->"aa144171-470f-439c-b40e-90a4a6667a59"],
+Cell[27882, 701, 1363, 26, 150, "Text",ExpressionUUID->"903a1616-7053-4463-b5db-0a005b905ee6"],
+Cell[29248, 729, 951, 17, 30, "Input",ExpressionUUID->"23648db8-2a60-41d4-ae7a-1066ec328a78"],
+Cell[30202, 748, 251, 6, 35, "Text",ExpressionUUID->"412697d9-bd72-468b-9324-8db15e3997fe"],
+Cell[30456, 756, 349, 6, 30, "Input",ExpressionUUID->"b4e3742d-4902-4479-a304-821198951da9"],
+Cell[30808, 764, 237, 6, 35, "Text",ExpressionUUID->"cb28fe4a-fb7a-4a8c-8f79-e395bbee06e9"],
+Cell[31048, 772, 339, 8, 30, "Input",ExpressionUUID->"533e8974-e781-416b-8a0b-a919d4ef3302"],
+Cell[31390, 782, 247, 6, 35, "Text",ExpressionUUID->"c167f49c-75f6-4149-8b77-8b800584a63e"],
+Cell[31640, 790, 650, 20, 30, "Input",ExpressionUUID->"71ac72a4-3f78-4df7-be42-827d38aacdd2"],
+Cell[32293, 812, 427, 8, 58, "Text",ExpressionUUID->"a18cb2ed-44a7-4a64-9fd0-b08d6498264b"],
+Cell[32723, 822, 579, 18, 30, "Input",ExpressionUUID->"796937f3-150b-4bd3-9c65-046f4b514a1b"],
+Cell[33305, 842, 1611, 28, 150, "Text",ExpressionUUID->"63c66ef6-15cb-49a0-b75a-b68139fe000a"],
+Cell[34919, 872, 1446, 31, 53, "Input",ExpressionUUID->"24b9a05c-fd27-470b-a3eb-a1eae072d525"],
+Cell[36368, 905, 1098, 28, 53, "Input",ExpressionUUID->"86810abf-387b-4984-81a3-55838ce3ea56"],
+Cell[37469, 935, 291, 6, 30, "Input",ExpressionUUID->"49b2b024-f8e8-4ce1-89da-924887b7af3c"],
+Cell[37763, 943, 587, 10, 35, "Text",ExpressionUUID->"f72778ea-7924-4b6e-95df-e619607df2e6"],
+Cell[38353, 955, 1605, 34, 196, "Text",ExpressionUUID->"1620ff94-e668-44c4-9f1a-1e5908826386"],
+Cell[39961, 991, 598, 10, 81, "Text",ExpressionUUID->"9629efb5-6fc0-4032-a8b2-0de853fadb70"]
+}
+]
+*)
+

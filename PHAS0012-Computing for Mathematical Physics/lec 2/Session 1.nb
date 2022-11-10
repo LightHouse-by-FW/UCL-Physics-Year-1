@@ -1,0 +1,1393 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     57359,       1385]
+NotebookOptionsPosition[     38921,       1142]
+NotebookOutlinePosition[     40990,       1188]
+CellTagsIndexPosition[     40923,       1183]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Lecture 2:  PHAS0012 (1449) Computing for Mathematical Physics\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.7499756907145576`*^9, 3.7499756992555027`*^9}, {
+  3.7556177458813505`*^9, 
+  3.7556177485370026`*^9}},ExpressionUUID->"e0ab62d0-cf2c-43e4-b78c-\
+fa70b3e694fb"],
+
+Cell[CellGroupData[{
+
+Cell["The List: A Structure for All Seasons", "Title",
+ CellTags->"c:1",ExpressionUUID->"3c891448-d31d-4649-a81b-a83a9af6da96"],
+
+Cell["What is a list?", "Subtitle",ExpressionUUID->"2a03acff-bcc0-4340-b0ff-6456d6024a40"],
+
+Cell["\<\
+A list is a collection of any of the basic structures of Mathematica: all the \
+items in the list need not be of the same type, and they may be lists \
+themselves. This makes the list a very powerful concept, and allows the \
+Mathematica programmer to develop complicated data structures. Examples of \
+lists are:\
+\>", "Text",
+ CellChangeTimes->{{3.7499757210359316`*^9, 
+  3.749975721416869*^9}},ExpressionUUID->"bf0bdd29-e152-43f9-a2a5-\
+bf56a508cd83"],
+
+Cell[BoxData[{
+ RowBox[{"vec", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"digits", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "0", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", 
+    ",", "8", ",", "9"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"week", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\<Sunday\>\"", ",", "\"\<Monday\>\"", ",", "\"\<Tuesday\>\"", ",", 
+    "\"\<Wednesday\>\"", ",", "\"\<Thursday\>\"", ",", "\"\<Friday\>\"", ",", 
+    "\"\<Saturday\>\""}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"person", "=", 
+  RowBox[{"{", 
+   RowBox[{"\"\<Tony\>\"", ",", "\"\<Harker\>\"", ",", "1948"}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"atomlist", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<C\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"0.0", ",", "0.0", ",", "0.0"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<N\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"1.2", ",", "0.0", ",", "0.0"}], "}"}]}], "}"}]}], 
+   "}"}]}]}], "Input",
+ CellLabel->
+  "In[380]:=",ExpressionUUID->"085dee38-2112-4583-b920-64e2999e03d6"],
+
+Cell["We can pick elements out of a list with the Part function", "Text",ExpressionUUID->"48229e93-5423-41dc-879b-36f4f50d58ed"],
+
+Cell[BoxData[
+ RowBox[{"Part", "[", 
+  RowBox[{"week", ",", "2"}], "]"}]], "Input",
+ CellLabel->
+  "In[385]:=",ExpressionUUID->"f29c119e-de28-477e-8ac8-ff762147798a"],
+
+Cell[BoxData[
+ RowBox[{"Part", "[", 
+  RowBox[{"atomlist", ",", "2", ",", "1"}], "]"}]], "Input",
+ CellLabel->
+  "In[386]:=",ExpressionUUID->"7dc37f95-bdc0-49cf-ac6a-4f2de1bf3728"],
+
+Cell[TextData[{
+ "or more tidily with the ",
+ StyleBox["[[ ]] ",
+  FontFamily->"Courier New"],
+ "notation"
+}], "Text",ExpressionUUID->"c3366020-6e2b-402c-9eca-1720cb6aa85e"],
+
+Cell[BoxData[{
+ RowBox[{"week", "[", 
+  RowBox[{"[", "2", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"atomlist", "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ",", "1"}], "]"}], "]"}]}], "Input",
+ CellLabel->
+  "In[387]:=",ExpressionUUID->"22308449-4d4f-4380-84ad-b47bed07a775"],
+
+Cell["Of course, a part of a list might itself be a list", "Text",ExpressionUUID->"775e3cd8-75e9-48f9-9eba-3990cae483ea"],
+
+Cell[BoxData[
+ RowBox[{"atomlist", "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ",", "2"}], "]"}], "]"}]], "Input",
+ CellLabel->
+  "In[389]:=",ExpressionUUID->"a98f6678-0db6-4d43-8aa2-24377bfd6a6a"],
+
+Cell["One can also take several parts at once ", "Text",ExpressionUUID->"f32a806c-c4ad-43c7-a590-8711c8de0eb2"],
+
+Cell[BoxData[
+ RowBox[{"Part", "[", 
+  RowBox[{"week", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[390]:=",ExpressionUUID->"288c7048-6e8b-4f73-9df0-7253c40ff42c"],
+
+Cell[BoxData[
+ RowBox[{"week", "[", 
+  RowBox[{"[", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3"}], "}"}], "]"}], "]"}]], "Input",
+ CellLabel->
+  "In[391]:=",ExpressionUUID->"603110da-33a0-4b42-9380-6b7023b868b2"],
+
+Cell["\<\
+Parts of a list can also be picked out by the Extract function - which is \
+similar to Part but takes its arguments in a different form\
+\>", "Text",ExpressionUUID->"1b961919-dcf5-4e64-8bfe-9b97996f85b3"],
+
+Cell[BoxData[
+ RowBox[{"Extract", "[", 
+  RowBox[{"week", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", "3", "}"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[392]:=",ExpressionUUID->"b3005895-78b2-4d85-be08-a090cdfc3438"],
+
+Cell["A list is characterised by its Head, and has a Length. ", "Text",ExpressionUUID->"586dc14c-bfbc-49c7-8e97-67a68ea14ce3"],
+
+Cell[BoxData[{
+ RowBox[{"Head", "[", "week", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "week", "]"}]}], "Input",
+ CellLabel->
+  "In[393]:=",ExpressionUUID->"83049abe-772b-467d-be4c-99f8d4043869"],
+
+Cell["The empty list is a valid object", "Text",ExpressionUUID->"05fe6e88-c568-4a93-a5a2-84a9cc5e3206"],
+
+Cell[BoxData[{
+ RowBox[{"nul", "=", 
+  RowBox[{"{", "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "nul", "]"}]}], "Input",
+ CellLabel->
+  "In[395]:=",ExpressionUUID->"45e40658-1208-41ef-9871-06d1b6324993"],
+
+Cell[CellGroupData[{
+
+Cell["Simple operations on lists", "Subtitle",ExpressionUUID->"704e76be-0ce7-4856-9c30-1eeea9868bf1"],
+
+Cell["Define a couple of simple lists to work with", "Text",ExpressionUUID->"11b0acaf-61fc-4c89-99f0-7b7bcaecd7da"],
+
+Cell[BoxData[{
+ RowBox[{"l1", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"l2", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "3", ",", "5", ",", "7", ",", "9", ",", "11"}], 
+   "}"}]}]}], "Input",
+ CellLabel->
+  "In[397]:=",ExpressionUUID->"5e3a3e58-581e-4f24-826e-b09e62e848ef"],
+
+Cell["One can select groups of elements", "Text",ExpressionUUID->"374227a8-f4c2-4ba1-b688-75d6356bc460"],
+
+Cell[BoxData[{
+ RowBox[{"Take", "[", 
+  RowBox[{"l1", ",", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Take", "[", 
+  RowBox[{"l1", ",", 
+   RowBox[{"-", "2"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Take", "[", 
+  RowBox[{"l1", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Take", "[", 
+  RowBox[{"l1", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "6", ",", "2"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->
+  "In[399]:=",ExpressionUUID->"a6606173-651d-4135-ab6d-7e063c62fabf"],
+
+Cell["take elements from the front or the back", "Text",ExpressionUUID->"8b43d36c-40b1-4618-883a-1ce7ae4858a1"],
+
+Cell[BoxData[{
+ RowBox[{"First", "[", "l1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Last", "[", "l1", "]"}]}], "Input",
+ CellLabel->
+  "In[403]:=",ExpressionUUID->"719b06fb-b2ef-451d-804d-95a9f6d72f5f"],
+
+Cell["\<\
+We can add elements to front or back: note that we can either set up a new \
+list or modify the existing one\
+\>", "Text",ExpressionUUID->"9c26acd2-d3e2-40bf-8a53-6032c08392e3"],
+
+Cell[BoxData[{"l1", "\[IndentingNewLine]", 
+ RowBox[{"Append", "[", 
+  RowBox[{"l1", ",", "7"}], 
+  "]"}], "\[IndentingNewLine]", "l1", "\[IndentingNewLine]", 
+ RowBox[{"AppendTo", "[", 
+  RowBox[{"l1", ",", "7"}], 
+  "]"}], "\[IndentingNewLine]", "l1", "\[IndentingNewLine]", 
+ RowBox[{"Prepend", "[", 
+  RowBox[{"l1", ",", "0"}], "]"}]}], "Input",
+ CellLabel->
+  "In[405]:=",ExpressionUUID->"7cfc6703-8c98-49ca-a0e1-7d5afa09e9fd"],
+
+Cell["or put them in at arbitrary positions", "Text",ExpressionUUID->"4483691f-a675-4331-ab03-61cb490eaa2f"],
+
+Cell[BoxData[
+ RowBox[{"lx", "=", 
+  RowBox[{"Insert", "[", 
+   RowBox[{"l1", ",", "x", ",", "4"}], "]"}]}]], "Input",
+ CellLabel->
+  "In[411]:=",ExpressionUUID->"ed9a4dd4-2c86-4d86-a51e-fd3700cba878"],
+
+Cell["and delete them", "Text",ExpressionUUID->"1c7b56e7-37de-4262-95a9-74a0263af99d"],
+
+Cell[BoxData[{
+ RowBox[{"Delete", "[", 
+  RowBox[{"lx", ",", "4"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Delete", "[", 
+  RowBox[{"lx", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "4", "}"}], ",", 
+     RowBox[{"{", "5", "}"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->
+  "In[412]:=",ExpressionUUID->"ba261568-031f-4382-832c-1ed71f88476b"],
+
+Cell["\<\
+Note the syntax of the last: the level of {} is necessary to cater for the \
+possibility that the list might be deeper than one level.\
+\>", "Text",ExpressionUUID->"dc531fd7-e140-434f-9813-fed44f994e3f"],
+
+Cell["We can join lists", "Text",ExpressionUUID->"d7025d36-9fd9-435f-bf2e-d8eec34043d7"],
+
+Cell[BoxData[
+ RowBox[{"Join", "[", 
+  RowBox[{"l1", ",", "l2"}], "]"}]], "Input",
+ CellLabel->
+  "In[414]:=",ExpressionUUID->"19007cf5-5f94-4989-a2ad-ae78677c0e7e"],
+
+Cell["throw parts away", "Text",ExpressionUUID->"aa1612bf-caa2-4e48-a4ed-43866d7c0c92"],
+
+Cell[BoxData[{
+ RowBox[{"Drop", "[", 
+  RowBox[{"l1", ",", "1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Drop", "[", 
+  RowBox[{"l1", ",", 
+   RowBox[{"-", "1"}]}], "]"}]}], "Input",
+ CellLabel->
+  "In[415]:=",ExpressionUUID->"20759280-b86c-4910-a881-bee6e42dbaf1"],
+
+Cell["throw away just the first part", "Text",ExpressionUUID->"06010e54-4380-424b-b43b-8cf859cfa362"],
+
+Cell[BoxData[
+ RowBox[{"Rest", "[", "l1", "]"}]], "Input",
+ CellLabel->
+  "In[417]:=",ExpressionUUID->"cc844ccf-5d99-4b19-9100-0f4b65898118"],
+
+Cell["\<\
+Note, though, that Mathematica will join lists even if they are, to human \
+eyes, incompatible:\
+\>", "Text",ExpressionUUID->"d495372d-2128-47e6-a55a-04905a9eccff"],
+
+Cell[BoxData[
+ RowBox[{"Join", "[", 
+  RowBox[{"l1", ",", "atomlist"}], "]"}]], "Input",
+ CellLabel->
+  "In[418]:=",ExpressionUUID->"1887b6ff-21aa-4f55-816a-07c3c156fae0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Basic operations on lists", "Subtitle",ExpressionUUID->"b877b8c8-f8ee-48a3-a082-1734aad35c72"],
+
+Cell["We can join lists together", "Text",ExpressionUUID->"4aae566d-2e66-421f-bb68-a7196a3da142"],
+
+Cell[BoxData[{
+ RowBox[{"lj", "=", 
+  RowBox[{"Join", "[", 
+   RowBox[{"l1", ",", "l2"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Sort", "[", "lj", "]"}]}], "Input",
+ CellLabel->
+  "In[419]:=",ExpressionUUID->"778216ee-6acd-43b7-a4f8-a91b8a3c8448"],
+
+Cell["Turn them round", "Text",ExpressionUUID->"ff21dc91-ceb3-4fb4-a6da-426b68d29e42"],
+
+Cell[BoxData[
+ RowBox[{"Reverse", "[", "lj", "]"}]], "Input",
+ CellLabel->
+  "In[421]:=",ExpressionUUID->"054a6200-1a37-49e2-953e-3b5a66585b81"],
+
+Cell["Shift elements", "Text",ExpressionUUID->"014099e3-10e3-4b29-bcb8-17677f4514f1"],
+
+Cell[BoxData[{"l1", "\[IndentingNewLine]", 
+ RowBox[{"RotateLeft", "[", "l1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"RotateRight", "[", "l1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"l1", "-", 
+  RowBox[{"RotateLeft", "[", "l1", "]"}]}]}], "Input",
+ CellLabel->
+  "In[422]:=",ExpressionUUID->"f557ebd6-0c27-452d-bbee-468e67c72f5b"],
+
+Cell["\<\
+Note that the last operation allowed us to see the pattern in the terms.\
+\>", "Text",ExpressionUUID->"aa958743-4ed4-42d1-88c1-90b8e1dcd6fd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Looking inside lists", "Subtitle",ExpressionUUID->"45342a3e-f574-43ec-b090-5702238ac08e"],
+
+Cell["We can count the occurrence of elements in a list", "Text",ExpressionUUID->"96f8c5ef-ec7d-4a69-85b0-c58d13a9e0f8"],
+
+Cell[BoxData[
+ RowBox[{"Count", "[", 
+  RowBox[{"lj", ",", "3"}], "]"}]], "Input",
+ CellLabel->
+  "In[426]:=",ExpressionUUID->"5ae701ba-0def-4711-8340-4e6e2d86ad61"],
+
+Cell["find their locations", "Text",ExpressionUUID->"577b541b-96d7-44be-b36c-c1ae56ef3e58"],
+
+Cell[BoxData[
+ RowBox[{"Position", "[", 
+  RowBox[{"lj", ",", "3"}], "]"}]], "Input",
+ CellLabel->
+  "In[427]:=",ExpressionUUID->"71e9ecea-5ced-47e1-8668-4bbd613d4090"],
+
+Cell["or find whether a list includes", "Text",ExpressionUUID->"a3421124-9503-4ae9-999b-9d5f1da53773"],
+
+Cell[BoxData[{
+ RowBox[{"MemberQ", "[", 
+  RowBox[{"lj", ",", "3"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MemberQ", "[", 
+  RowBox[{"lj", ",", "42"}], "]"}]}], "Input",
+ CellLabel->
+  "In[428]:=",ExpressionUUID->"0328e805-7a9f-4da9-b798-fab03d2c992b"],
+
+Cell["or omits certain elements", "Text",ExpressionUUID->"13d1aa6a-5501-4d9f-b93d-7d77deb6d7cf"],
+
+Cell[BoxData[{
+ RowBox[{"FreeQ", "[", 
+  RowBox[{"lj", ",", "3"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FreeQ", "[", 
+  RowBox[{"lj", ",", "42"}], "]"}]}], "Input",
+ CellLabel->
+  "In[430]:=",ExpressionUUID->"7a84a1f3-e81f-4c04-94ac-7d647fa9d5f9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+More drastic operations on lists: 
+restructuring lists\
+\>", "Subtitle",ExpressionUUID->"1013d489-8725-4683-a20d-aab197c7a390"],
+
+Cell["We have seen that lists can have structure: for example", "Text",ExpressionUUID->"885130a7-682c-4ab2-8991-b728a869a6a4"],
+
+Cell[BoxData["atomlist"], "Input",
+ CellLabel->
+  "In[432]:=",ExpressionUUID->"ff0dbaac-2ae2-4b1c-b23f-dfee0317cd0e"],
+
+Cell["We can destroy the internal structure", "Text",
+ CellChangeTimes->{
+  3.599220687978756*^9},ExpressionUUID->"04a132dd-71e9-4fe4-9e7d-\
+7ce00f9142fb"],
+
+Cell[BoxData[
+ RowBox[{"flatlist", "=", 
+  RowBox[{"Flatten", "[", "atomlist", "]"}]}]], "Input",
+ CellLabel->
+  "In[433]:=",ExpressionUUID->"d531299c-a58a-4ea7-992a-cf594fb5e767"],
+
+Cell["and we can start to rebuild it", "Text",ExpressionUUID->"3a152309-e57c-494f-89a9-5309a84277bb"],
+
+Cell[BoxData[
+ RowBox[{"Partition", "[", 
+  RowBox[{"flatlist", ",", "4"}], "]"}]], "Input",
+ CellLabel->
+  "In[434]:=",ExpressionUUID->"12609218-c163-4a58-a763-c93fa471e31a"],
+
+Cell["We'll see later how to finish the rebuild.", "Text",ExpressionUUID->"29e24909-8759-40b7-ad89-2678ce318f17"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Selection criteria", "Subtitle",ExpressionUUID->"b3e15f1f-49a3-4a03-921c-add52f84ed3e"],
+
+Cell["\<\
+We can pick elements out of lists according to criteria: Mathematica has a \
+lot of these built in. For example\
+\>", "Text",ExpressionUUID->"322d78e4-6321-48fb-b7b6-196b656cc99f"],
+
+Cell[BoxData[{
+ RowBox[{"Select", "[", 
+  RowBox[{"l1", ",", "EvenQ"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Select", "[", 
+  RowBox[{"l1", ",", "OddQ"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Select", "[", 
+  RowBox[{"l1", ",", "IntegerQ"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Select", "[", 
+  RowBox[{"l1", ",", "NumberQ"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Select", "[", 
+  RowBox[{"atomlist", ",", "ListQ"}], "]"}]}], "Input",
+ CellLabel->
+  "In[435]:=",ExpressionUUID->"4350fb64-251a-46bf-99b8-1af2650573d4"],
+
+Cell["But note that there is no RealQ.", "Text",ExpressionUUID->"9e70524a-5c72-464d-87a4-a17aeaf2247b"],
+
+Cell["\<\
+An alternative is the Cases construction. Whereas Select requires the name of \
+a function which will evaluate to True or False on which to base its \
+selection, Cases uses a pattern (which we will meet in Session 4) to control \
+the selection.\
+\>", "Text",ExpressionUUID->"20d246b7-8992-48ba-a6af-0a2b3ea5bc1e"],
+
+Cell[BoxData[{
+ RowBox[{"Cases", "[", 
+  RowBox[{"l1", ",", "_Integer"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Cases", "[", 
+  RowBox[{"atomlist", ",", "_List"}], "]"}]}], "Input",
+ CellLabel->
+  "In[440]:=",ExpressionUUID->"fca8c2d7-fba7-40bf-b681-a37588549830"],
+
+Cell["More complicated patterns are needed sometimes", "Text",ExpressionUUID->"c6d6ccb7-c912-4a15-ae3d-18a1a45a975c"],
+
+Cell[BoxData[
+ RowBox[{"Cases", "[", 
+  RowBox[{"l1", ",", 
+   RowBox[{"n_", "/;", 
+    RowBox[{"EvenQ", "[", "n", "]"}]}]}], "]"}]], "Input",
+ CellLabel->
+  "In[442]:=",ExpressionUUID->"5f29ef0d-fc88-40f8-b5f5-4cb07f2656a8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Lists as Mathematical objects: vectors and matrices", "Subtitle",ExpressionUUID->"b32d04aa-778a-4608-8747-5dc93e7d4cd6"],
+
+Cell["\<\
+Let's define a vector and a matrix: note that a matrix is a list of lists, \
+with each element of the list being a row of the matrix.\
+\>", "Text",ExpressionUUID->"50a20c30-aef9-421b-ab72-387082a4e033"],
+
+Cell[BoxData[{
+ RowBox[{"vec", "=", 
+  RowBox[{"{", 
+   RowBox[{"1.0", ",", "2.0", ",", "\[Pi]"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"mat", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "c"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"d", ",", "e", ",", "f"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"g", ",", "h", ",", "i"}], "}"}]}], "}"}]}]}], "Input",
+ CellLabel->
+  "In[443]:=",ExpressionUUID->"7d796813-76df-4102-945e-3aa9ffdb53f5"],
+
+Cell["The usual matrix operations are present", "Text",ExpressionUUID->"30803249-3ae8-4ab2-8a92-cff17204853a"],
+
+Cell[BoxData[{
+ RowBox[{"Transpose", "[", "mat", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Tr", "[", "mat", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Det", "[", "mat", "]"}]}], "Input",
+ CellLabel->
+  "In[445]:=",ExpressionUUID->"6faaa13b-b610-44f5-97ef-42de70a7c84c"],
+
+Cell["We can display a matrix in a more pleasing form", "Text",ExpressionUUID->"7ddef6a1-1860-4ee4-9510-917f80437b8b"],
+
+Cell[BoxData[{
+ RowBox[{"MatrixForm", "[", "mat", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"mat", "//", "MatrixForm"}]}], "Input",
+ CellLabel->
+  "In[448]:=",ExpressionUUID->"dd19b6f2-6081-4a30-ad61-dfe0ee543a9a"],
+
+Cell["We can scale ", "Text",ExpressionUUID->"3988a67b-95e9-4a8e-b0ac-6a49a6b428fe"],
+
+Cell[BoxData[{
+ RowBox[{"4", " ", "vec"}], "\[IndentingNewLine]", 
+ RowBox[{"4", " ", "mat"}]}], "Input",
+ CellLabel->
+  "In[450]:=",ExpressionUUID->"8bd41b7f-e887-408e-b347-750dec647392"],
+
+Cell["Multiply", "Text",ExpressionUUID->"365d3944-6571-4c38-9d16-b28f679df6bc"],
+
+Cell[BoxData[{
+ RowBox[{"vec", " ", "vec"}], "\[IndentingNewLine]", 
+ RowBox[{"mat", " ", "vec"}]}], "Input",
+ CellLabel->
+  "In[452]:=",ExpressionUUID->"04176a22-4d4f-4c20-a839-e82aafc46728"],
+
+Cell["\<\
+But note that these are element-by-element multiplies, not scalar products. \
+If we want scalar products we must use Dot\
+\>", "Text",ExpressionUUID->"fefc5600-b43a-43fb-8d79-53c25efb061b"],
+
+Cell[BoxData[{
+ RowBox[{"Dot", "[", 
+  RowBox[{"vec", ",", "vec"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"vec", ".", "vec"}], "\[IndentingNewLine]", 
+ RowBox[{"mat", ".", "vec"}]}], "Input",
+ CellLabel->
+  "In[454]:=",ExpressionUUID->"55fb391c-d59d-4ffa-ae4a-387b99f4165d"],
+
+Cell["\<\
+We need to specify whether we want element-by-element or matrix-style powers\
+\>", "Text",ExpressionUUID->"4d15d8fc-a63e-42de-b667-c30098a03e89"],
+
+Cell[BoxData[{
+ RowBox[{"mat", "^", "2"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixPower", "[", 
+  RowBox[{"mat", ",", "2"}], "]"}]}], "Input",
+ CellLabel->
+  "In[457]:=",ExpressionUUID->"d16edd81-6a9b-4987-a4d8-522afe42cd12"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Lists as Mathematical objects: sets", "Subtitle",ExpressionUUID->"00e834be-ad51-4f05-ba2c-504a6999ec2e"],
+
+Cell["\<\
+The basic set operations are present: Union gives the list of all the \
+elements found in each list, with no repetitions; Intersection gives elements \
+common to both lists; Complement gives elements in l1 that arre not found in \
+l2.\
+\>", "Text",ExpressionUUID->"9273c645-7d75-4cc3-a560-98af418e4ecb"],
+
+Cell[BoxData[{"l1", "\[IndentingNewLine]", "l2", "\[IndentingNewLine]", 
+ RowBox[{"Union", "[", 
+  RowBox[{"l1", ",", "l2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Intersection", "[", 
+  RowBox[{"l1", ",", "l2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Complement", "[", 
+  RowBox[{"l1", ",", "l2"}], "]"}]}], "Input",
+ CellLabel->
+  "In[459]:=",ExpressionUUID->"573acf51-af6d-4c13-8426-40169e432544"],
+
+Cell["We can use Union to tidy up a single list", "Text",ExpressionUUID->"7826cf83-30e0-432b-b79e-1aa6724ee370"],
+
+Cell[BoxData[
+ RowBox[{"Union", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "3", ",", "4", ",", "5", ",", "6"}], 
+   "}"}], "]"}]], "Input",
+ CellLabel->
+  "In[464]:=",ExpressionUUID->"791f628a-c70a-43d4-b829-7c2f79d07898"],
+
+Cell["\<\
+and even extend it by making our own definition of what counts as equality. \
+For example, suppose we had a database in which we knew there were duplicate \
+entries because sometimes we included a full forename and sometimes just an \
+initial. We could clean it up with\
+\>", "Text",ExpressionUUID->"ae642322-7e1d-4c79-849f-4b51a623a4c7"],
+
+Cell[BoxData[{
+ RowBox[{"nl", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<J\>\"", ",", "\"\<Bloggs\>\""}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Ali\>\"", ",", "\"\<Khan\>\""}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Joe\>\"", ",", "\"\<Bloggs\>\""}], "}"}]}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"tf", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Characters", "[", 
+      RowBox[{"#1", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{"Characters", "[", 
+      RowBox[{"#2", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "&"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Union", "[", 
+  RowBox[{"nl", ",", 
+   RowBox[{"SameTest", "\[Rule]", "tf"}]}], "]"}]}], "Input",
+ CellLabel->
+  "In[465]:=",ExpressionUUID->"9eb2e183-5ee6-42db-be25-f728506bb2f5"],
+
+Cell["\<\
+We'll learn how to write our own functions, such as tf, in Session 5.\
+\>", "Text",ExpressionUUID->"a9dd2dec-c688-4468-8039-9395231fa5c1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Doing things to Lists", "Subtitle",ExpressionUUID->"c1728224-fa98-4e6a-83f4-ee0f52e92b11"],
+
+Cell["\<\
+It is worth looking a little further at why when we wrote m^2 we got an \
+element-by-element square. To find out what Mathematica translates the square \
+into, use FullForm, and then inquire about the relevant function.\
+\>", "Text",ExpressionUUID->"df513ad6-a5b2-4d76-b90a-65ecf80cdf3d"],
+
+Cell[BoxData[{
+ RowBox[{"FullForm", "[", 
+  RowBox[{"m", "^", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"??", "Power"}]}], "Input",
+ CellLabel->
+  "In[468]:=",ExpressionUUID->"a3e75baa-bf95-45a5-87b4-c17199406a64"],
+
+Cell["\<\
+The Listable attribute is what makes Power look inside Lists.\
+\>", "Text",ExpressionUUID->"e2237a0c-9e88-45db-8420-223b4eda3211"],
+
+Cell[BoxData[{
+ RowBox[{"vv", "=", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "b", ",", 
+    RowBox[{"{", 
+     RowBox[{"c", ",", "d"}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Power", "[", 
+  RowBox[{"vv", ",", "n"}], "]"}]}], "Input",
+ CellLabel->
+  "In[470]:=",ExpressionUUID->"a9fe8d32-cfd9-4cb7-a67b-7bc5c8dc73d7"],
+
+Cell["\<\
+Normally, a function which we might define ourselves is not Listable\
+\>", "Text",ExpressionUUID->"c9c5c460-0441-4b5b-9bdd-127fe0a83ca5"],
+
+Cell[BoxData[
+ RowBox[{"ff", "[", "vv", "]"}]], "Input",
+ CellLabel->
+  "In[472]:=",ExpressionUUID->"74b37882-e748-4958-8f4d-e83795a57c31"],
+
+Cell["But we can force it to be", "Text",ExpressionUUID->"9cacaa46-bf3f-48e1-8d14-ae3917e14ec1"],
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"ff", ",", "Listable"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ff", "[", "vv", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClearAttributes", "[", 
+  RowBox[{"ff", ",", "Listable"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ff", "[", "vv", "]"}]}], "Input",
+ CellLabel->
+  "In[473]:=",ExpressionUUID->"d3f92faa-a06f-49db-ae50-41c557f4a804"],
+
+Cell["Thread has a similar effect", "Text",ExpressionUUID->"a7c2db22-e299-46dd-8733-64fed6d84d60"],
+
+Cell[BoxData[
+ RowBox[{"Thread", "[", 
+  RowBox[{"ff", "[", "vv", "]"}], "]"}]], "Input",
+ CellLabel->
+  "In[477]:=",ExpressionUUID->"5ccec46e-5017-43f2-9c3d-a0381e9ed77d"],
+
+Cell[TextData[{
+ "Lists in ",
+ StyleBox["Mathematica ",
+  FontSlant->"Italic"],
+ "can be visualized as having a tree like structure with different levels"
+}], "Text",
+ CellChangeTimes->{{3.662114116780019*^9, 
+  3.662114166717873*^9}},ExpressionUUID->"9767433f-920d-43e1-8202-\
+d12cb11d3f79"],
+
+Cell[BoxData[
+ RowBox[{"TreeForm", "[", "vv", "]"}]], "Input",
+ CellChangeTimes->{{3.66211417098741*^9, 3.6621141757407637`*^9}},
+ CellLabel->
+  "In[478]:=",ExpressionUUID->"7bff221d-7c7d-4cde-a807-2ca0dc9b37d4"],
+
+Cell["\<\
+And we can also Map a function onto a list, at one or several levels.\
+\>", "Text",ExpressionUUID->"2769d4da-b4fa-4a90-b95b-1ed61c78a68b"],
+
+Cell[BoxData[{
+ RowBox[{"Map", "[", 
+  RowBox[{"ff", ",", "vv"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", 
+  RowBox[{"ff", ",", "vv", ",", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", 
+  RowBox[{"ff", ",", "vv", ",", 
+   RowBox[{"{", "2", "}"}]}], "]"}]}], "Input",
+ CellLabel->
+  "In[479]:=",ExpressionUUID->"1f13136c-4a1d-45d5-bad8-72641bb0871a"],
+
+Cell[BoxData[
+ RowBox[{"Apply", "[", 
+  RowBox[{"ff", ",", "vv"}], "]"}]], "Input",
+ CellLabel->
+  "In[482]:=",ExpressionUUID->"9dddb3c1-cbdb-4709-a980-74f60a175423"],
+
+Cell["\<\
+One of the most powerful constructions is Apply, which replaces the Head of \
+an expression. Often this is a list\
+\>", "Text",ExpressionUUID->"96bf1846-2c79-40e8-9386-a7544e65d162"],
+
+Cell[BoxData[{
+ RowBox[{"Apply", "[", 
+  RowBox[{"Plus", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Apply", "[", 
+  RowBox[{"Times", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->
+  "In[483]:=",ExpressionUUID->"f3d95b5a-0065-42ad-aa4f-ac86517b79c1"],
+
+Cell["but it need not be.", "Text",ExpressionUUID->"47968d84-17ef-4cb5-9d9c-d2f3e566394d"],
+
+Cell[BoxData[
+ RowBox[{"Apply", "[", 
+  RowBox[{"Times", ",", 
+   RowBox[{"a", "+", "b", "+", "c"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[485]:=",ExpressionUUID->"21393db6-07e3-43fc-a017-e1c5584f3e2c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Combining Lists", "Subtitle",ExpressionUUID->"87496cd5-4306-4223-91b9-a71d0ef8a542"],
+
+Cell["\<\
+The major ways of combining lists together are the Inner function (like a \
+generalisation of a scalar product) and the Outer function (which has some \
+similarities with a cross product)\
+\>", "Text",ExpressionUUID->"581038e1-ceb8-4827-8294-51718cae5753"],
+
+Cell[BoxData[{
+ RowBox[{"v1", "=", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"v2", "=", 
+  RowBox[{"{", 
+   RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Inner", "[", 
+  RowBox[{"f", ",", "v1", ",", "v2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Inner", "[", 
+  RowBox[{"f", ",", "v1", ",", "v2", ",", "g"}], "]"}]}], "Input",
+ CellLabel->
+  "In[486]:=",ExpressionUUID->"de095905-bfe6-4083-a3dc-7ab01c975157"],
+
+Cell[TextData[{
+ "Note that ",
+ StyleBox["Inner ",
+  FontFamily->"Courier New"],
+ "takes corresponding elements from the lists. It will fail if the lists are \
+not of the same length"
+}], "Text",ExpressionUUID->"bbcc9f74-523f-4983-acd0-0b2004e2e73f"],
+
+Cell[BoxData[
+ RowBox[{"Inner", "[", 
+  RowBox[{"fun", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[490]:=",ExpressionUUID->"3adbc909-67d6-44eb-af1c-db8ef80b0278"],
+
+Cell["So we can see that the dot product is just", "Text",ExpressionUUID->"46d6ef63-bb4f-46ad-a8ef-570f82898aaa"],
+
+Cell[BoxData[{
+ RowBox[{"v1", ".", "v2"}], "\[IndentingNewLine]", 
+ RowBox[{"Inner", "[", 
+  RowBox[{"Times", ",", "v1", ",", "v2", ",", "Plus"}], "]"}]}], "Input",
+ CellLabel->
+  "In[491]:=",ExpressionUUID->"110f5f18-cb77-4b95-ab21-dd053aeabe04"],
+
+Cell["Here's another example", "Text",ExpressionUUID->"e80ff209-474e-4d97-83e5-1497c540fafa"],
+
+Cell[BoxData[{
+ RowBox[{"feeder", "=", 
+  RowBox[{"{", 
+   RowBox[{"cow", ",", "cat", ",", "bird"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"food", "=", 
+  RowBox[{"{", 
+   RowBox[{"grass", ",", "mouse", ",", "worm"}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Inner", "[", 
+  RowBox[{"eats", ",", "feeder", ",", "food", ",", "And"}], "]"}]}], "Input",
+ CellLabel->
+  "In[493]:=",ExpressionUUID->"544357a6-653a-4d5b-a19d-61fded8071fa"],
+
+Cell["\<\
+Outer, on the other hand, takes all the possible combinations of elements \
+from the lists\
+\>", "Text",ExpressionUUID->"77149b9b-97c5-460f-8e0a-1228f182f78f"],
+
+Cell[BoxData[
+ RowBox[{"oo", "=", 
+  RowBox[{"Outer", "[", 
+   RowBox[{"eats", ",", "feeder", ",", "food"}], "]"}]}]], "Input",
+ CellLabel->
+  "In[496]:=",ExpressionUUID->"42bd6c19-301b-4567-a30d-3c3e6109b1ee"],
+
+Cell[BoxData[
+ RowBox[{"Apply", "[", 
+  RowBox[{"And", ",", 
+   RowBox[{"Flatten", "[", "oo", "]"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[497]:=",ExpressionUUID->"c45af608-c89a-4008-8017-a1a74afc4fa7"],
+
+Cell["\<\
+Here, of course, it does not matter whether the lists have the same length\
+\>", "Text",ExpressionUUID->"6dc9e16a-b4e7-4918-be6e-3f6eccac7fca"],
+
+Cell[BoxData[
+ RowBox[{"Outer", "[", 
+  RowBox[{"fun", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[498]:=",ExpressionUUID->"fd8b645d-ca2f-4bd8-a8b6-956d94205e00"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Making Lists", "Subtitle",ExpressionUUID->"ef3129cd-679a-4ab1-9eab-e9f00795939e"],
+
+Cell["Lists can be generated very simply using Range", "Text",ExpressionUUID->"9a63afa8-ae7b-45b8-a130-c9f1f0e866be"],
+
+Cell[BoxData[{
+ RowBox[{"Range", "[", "3", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Range", "[", 
+  RowBox[{
+   RowBox[{"-", "3"}], ",", "4"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Range", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Range", "[", 
+  RowBox[{
+   RowBox[{"-", "1"}], ",", " ", "1", ",", " ", "0.25"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Range", "[", 
+  RowBox[{"a", ",", " ", "b", ",", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "4"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6621292550110188`*^9, 3.6621293037382402`*^9}},
+ CellLabel->
+  "In[499]:=",ExpressionUUID->"b882b6af-3291-44df-a00d-0f9712b135b4"],
+
+Cell["Table allows a bit more generality", "Text",ExpressionUUID->"1259ecf8-bbb9-44dc-93fe-74cbcae2fa84"],
+
+Cell[BoxData[{
+ RowBox[{"Table", "[", 
+  RowBox[{"i", ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "3"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Cos", "[", "i", " ", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", "1", ",", 
+     RowBox[{"1", "/", "12"}]}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{"i", "+", "j", "-", "1"}], ")"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "3"}], "}"}]}], "]"}], "//", "MatrixForm"}]}], "Input",
+ CellLabel->
+  "In[504]:=",ExpressionUUID->"e4d43e56-15cf-403b-af14-fdffbc6c9ad6"],
+
+Cell["We could do this with Outer", "Text",ExpressionUUID->"92e1842b-e24d-45d2-888f-87d35ef76621"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"1", "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Outer", "[", 
+      RowBox[{"Plus", ",", 
+       RowBox[{"Range", "[", "3", "]"}], ",", 
+       RowBox[{"Range", "[", "3", "]"}]}], "]"}], "-", "1"}], ")"}]}], "//", 
+  "MatrixForm"}]], "Input",
+ CellLabel->
+  "In[507]:=",ExpressionUUID->"f5d16b97-2f5a-4042-9dc9-b3fbeac0583c"],
+
+Cell["Table can set up nested lists such as", "Text",ExpressionUUID->"7998971b-55cf-43e2-9234-ef0c3e62944b"],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"i", ",", 
+     RowBox[{"i", "^", "2"}], ",", 
+     RowBox[{"i", "^", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[508]:=",ExpressionUUID->"269d7d3b-40bb-4a9f-a2a0-d161237d8059"],
+
+Cell["We can generate general structures with Array", "Text",ExpressionUUID->"82a0d138-d7ce-4bb9-ba14-96cad2d3ad0b"],
+
+Cell[BoxData[{
+ RowBox[{"Array", "[", 
+  RowBox[{"ff", ",", "10"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Array", "[", 
+  RowBox[{"ff", ",", "6", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.0"}], ",", "1.0"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Array", "[", 
+   RowBox[{"aa", ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3"}], "}"}]}], "]"}], "//", "MatrixForm"}]}], "Input",
+ CellChangeTimes->{{3.662129525367074*^9, 3.662129535437933*^9}, {
+  3.662129579152239*^9, 3.662129644919541*^9}},
+ CellLabel->
+  "In[509]:=",ExpressionUUID->"b3a56920-5b71-4afd-9bce-05659aa58e53"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The difference between a Sequence and a List", "Subtitle",ExpressionUUID->"236e72ba-bf29-4830-9b5e-9e3a9b1d7c36"],
+
+Cell[TextData[{
+ "A list is a collection of expressions in a 'wrapper', a pair of curly \
+brackets. A ",
+ StyleBox["Sequence",
+  FontFamily->"Courier New"],
+ " is just a series of expressions separated by commas."
+}], "Text",ExpressionUUID->"611e336c-dbcd-4f64-9626-4e8ae4985427"],
+
+Cell[BoxData[{
+ RowBox[{"List", "[", 
+  RowBox[{"a", ",", "b", ",", "c"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Sequence", "[", 
+  RowBox[{"a", ",", "b", ",", "c"}], "]"}]}], "Input",
+ CellLabel->
+  "In[512]:=",ExpressionUUID->"97f6fde5-8e1a-43ad-ad5a-fbc12d016e86"],
+
+Cell[TextData[{
+ "Sequences can be used to pass a number of arguments to a function, for \
+example by ",
+ StyleBox["Apply",
+  FontFamily->"Courier New"],
+ StyleBox["ing",
+  FontFamily->"Times New Roman"],
+ StyleBox[" Sequence",
+  FontFamily->"Courier New"],
+ " to a ",
+ StyleBox["List",
+  FontFamily->"Courier New"],
+ ":"
+}], "Text",ExpressionUUID->"b9d9f473-8100-4567-8421-28a9c126686d"],
+
+Cell[BoxData[{
+ RowBox[{"ll", "=", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"fun", "[", 
+  RowBox[{"Apply", "[", 
+   RowBox[{"Sequence", ",", "ll"}], "]"}], "]"}]}], "Input",
+ CellLabel->
+  "In[514]:=",ExpressionUUID->"bceae37e-c171-472d-8ab6-ef3f2e7cafae"],
+
+Cell[TextData[{
+ "Note that ",
+ StyleBox["Apply",
+  FontFamily->"Courier New"],
+ " is such a commonly used function that there is a shorthand for it:"
+}], "Text",ExpressionUUID->"f7078ff4-9b3f-498c-8454-8f77066ca518"],
+
+Cell[BoxData[
+ RowBox[{"fun", "[", 
+  RowBox[{"Sequence", "@@", "ll"}], "]"}]], "Input",
+ CellLabel->
+  "In[516]:=",ExpressionUUID->"6054afd0-2fd6-49c0-bf10-d588047f80b8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Lists of Data", "Subtitle",ExpressionUUID->"76b4220a-1934-4182-a66e-2ca322274ab2"],
+
+Cell["\<\
+Let's set up a table of values, which might represent experimental data.\
+\>", "Text",ExpressionUUID->"4deca52a-8650-4b95-b39c-4b410f377c16"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pv", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", 
+       RowBox[{"1", "/", "p"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"p", ",", "1", ",", "5", ",", ".1"}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellLabel->
+  "In[517]:=",ExpressionUUID->"136936e2-f4a0-424f-bea4-e62bb74cb53c"],
+
+Cell["For realism, add some random errors", "Text",ExpressionUUID->"f2262c0b-7271-4469-b074-57946a465ff9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"er", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.2"}], ",", "0.2"}], "}"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"p", ",", "1", ",", "5", ",", "0.1`"}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.4399603551856003`*^9, 3.4399603571256*^9}},
+ CellLabel->
+  "In[518]:=",ExpressionUUID->"13f0e088-baf5-444a-be4b-f6b2c84aacd3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pvd", "=", 
+   RowBox[{"pv", "+", "er"}]}], ";"}]], "Input",
+ CellLabel->
+  "In[519]:=",ExpressionUUID->"14f020ef-3ade-44dc-9614-641485ce3d63"],
+
+Cell["Plot the data", "Text",ExpressionUUID->"e54144d1-d8b1-4da8-8e48-0eadf7cf8177"],
+
+Cell[BoxData[
+ RowBox[{"g1", "=", 
+  RowBox[{"ListPlot", "[", "pvd", "]"}]}]], "Input",
+ CellLabel->
+  "In[520]:=",ExpressionUUID->"9d4651df-f183-43a7-878c-76402a4d2df3"],
+
+Cell["Pick out the first number of each pair", "Text",ExpressionUUID->"47f1601f-065f-43eb-a608-9fc9db38a508"],
+
+Cell[BoxData[
+ RowBox[{"pvals", "=", 
+  RowBox[{
+   RowBox[{"Transpose", "[", "pvd", "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
+ CellLabel->
+  "In[521]:=",ExpressionUUID->"604e9615-4da3-48bb-9909-3934875270db"],
+
+Cell["Generate some ideal results", "Text",ExpressionUUID->"51e5918d-7111-4be3-be80-5fc423e41fe2"],
+
+Cell[BoxData[
+ RowBox[{"vtheor", "=", 
+  RowBox[{"1", "/", "pvals"}]}]], "Input",
+ CellLabel->
+  "In[522]:=",ExpressionUUID->"a5f9477f-d4ae-4301-8a16-5ffbce4a620c"],
+
+Cell["Plot them", "Text",ExpressionUUID->"2fcd8745-1511-451b-97fa-2dfe4d3f6763"],
+
+Cell[BoxData[
+ RowBox[{"g2", "=", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"pvals", ",", "vtheor"}], "}"}], "]"}], ",", 
+    RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[523]:=",ExpressionUUID->"b25ec2a0-cfb6-4b34-944a-70711e02ccfb"],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"g1", ",", "g2"}], "]"}]], "Input",
+ CellLabel->
+  "In[524]:=",ExpressionUUID->"74ad96a8-e206-41df-b588-96d493090655"],
+
+Cell["Work out the root mean square error", "Text",ExpressionUUID->"d9579193-a8fa-4e93-bd40-7bee1f988989"],
+
+Cell[BoxData[
+ RowBox[{"erms", "=", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{
+    RowBox[{"Apply", "[", 
+     RowBox[{"Plus", ",", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Transpose", "[", "pvd", "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "-", "vtheor"}], ")"}], "^", 
+       "2"}]}], "]"}], "/", 
+    RowBox[{"Length", "[", "pvd", "]"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[525]:=",ExpressionUUID->"5c8d0707-8525-4423-8f91-138502e3c309"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Summary", "Subtitle",ExpressionUUID->"12f987be-23ca-427a-aef3-5eb6a0f62979"],
+
+Cell["\<\
+Lists have immediate application as mathematical objects. Try to think in \
+terms of operations on list, rather than thinking in sequential terms and \
+picking elements out one by one.\
+\>", "Text",ExpressionUUID->"3a4b5f50-f74d-415b-b393-a786a4da367a"],
+
+Cell[TextData[StyleBox["A.H. Harker, J. Bhamrah\nUCL\nDecember 2004, Revised \
+January 2009, January 2018, December 2018",
+ FontColor->RGBColor[0, 1, 0]]], "Text",
+ CellChangeTimes->{{3.4399603331456003`*^9, 3.4399603397906*^9}, {
+  3.725026040073449*^9, 3.7250260487816896`*^9}, {3.7501767169444804`*^9, 
+  3.750176725524005*^9}},ExpressionUUID->"dd94d77b-e528-471c-a41e-\
+8bac16dff530"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{798, 848},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingStartingPageNumber->17,
+PrintingPageRange->{Automatic, Automatic},
+ShowSelection->True,
+TaggingRules:>{
+ "PaginationCache" -> {{2003, 12, 6, 15, 57, 38.91888`9.342735219247382}, {17,
+     17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 18, 18, 18, 
+    18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 19, 19, 
+    19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 20, 20, 20, 
+    20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 21, 21, 21, 21, 
+    21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 22, 
+    22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 23, 
+    23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 24, 
+    24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 
+    25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 26, 26, 26, 26, 26, 26, 26, 26, 
+    26, 26, 26, 26, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 
+    27, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 
+    28, 28, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 
+    29, 29, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 
+    30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 
+    32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 33, 33, 33, 33, 
+    33, 33, 33, 33, 33, 33, 34, 34, 34, 34, 34, 34, 34, 34, 34, 35, 35, 35, 
+    35, 35, 35, 35, 36, 36, 36, 36, 36}}},
+Magnification->1.25,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "c:1"->{
+  Cell[846, 30, 127, 1, 194, "Title",ExpressionUUID->"3c891448-d31d-4649-a81b-a83a9af6da96",
+   CellTags->"c:1"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"c:1", 40785, 1177}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 276, 6, 38, "Subsubtitle",ExpressionUUID->"e0ab62d0-cf2c-43e4-b78c-fa70b3e694fb"],
+Cell[CellGroupData[{
+Cell[846, 30, 127, 1, 194, "Title",ExpressionUUID->"3c891448-d31d-4649-a81b-a83a9af6da96",
+ CellTags->"c:1"],
+Cell[976, 33, 90, 0, 41, "Subtitle",ExpressionUUID->"2a03acff-bcc0-4340-b0ff-6456d6024a40"],
+Cell[1069, 35, 465, 9, 126, "Text",ExpressionUUID->"bf0bdd29-e152-43f9-a2a5-bf56a508cd83"],
+Cell[1537, 46, 1158, 32, 170, "Input",ExpressionUUID->"085dee38-2112-4583-b920-64e2999e03d6"],
+Cell[2698, 80, 128, 0, 42, "Text",ExpressionUUID->"48229e93-5423-41dc-879b-36f4f50d58ed"],
+Cell[2829, 82, 166, 4, 49, "Input",ExpressionUUID->"f29c119e-de28-477e-8ac8-ff762147798a"],
+Cell[2998, 88, 180, 4, 49, "Input",ExpressionUUID->"7dc37f95-bdc0-49cf-ac6a-4f2de1bf3728"],
+Cell[3181, 94, 173, 5, 42, "Text",ExpressionUUID->"c3366020-6e2b-402c-9eca-1720cb6aa85e"],
+Cell[3357, 101, 274, 7, 74, "Input",ExpressionUUID->"22308449-4d4f-4380-84ad-b47bed07a775"],
+Cell[3634, 110, 121, 0, 42, "Text",ExpressionUUID->"775e3cd8-75e9-48f9-9eba-3990cae483ea"],
+Cell[3758, 112, 191, 5, 49, "Input",ExpressionUUID->"a98f6678-0db6-4d43-8aa2-24377bfd6a6a"],
+Cell[3952, 119, 111, 0, 42, "Text",ExpressionUUID->"f32a806c-c4ad-43c7-a590-8711c8de0eb2"],
+Cell[4066, 121, 215, 6, 49, "Input",ExpressionUUID->"288c7048-6e8b-4f73-9df0-7253c40ff42c"],
+Cell[4284, 129, 212, 6, 49, "Input",ExpressionUUID->"603110da-33a0-4b42-9380-6b7023b868b2"],
+Cell[4499, 137, 214, 3, 70, "Text",ExpressionUUID->"1b961919-dcf5-4e64-8bfe-9b97996f85b3"],
+Cell[4716, 142, 270, 8, 49, "Input",ExpressionUUID->"b3005895-78b2-4d85-be08-a090cdfc3438"],
+Cell[4989, 152, 126, 0, 42, "Text",ExpressionUUID->"586dc14c-bfbc-49c7-8e97-67a68ea14ce3"],
+Cell[5118, 154, 208, 4, 74, "Input",ExpressionUUID->"83049abe-772b-467d-be4c-99f8d4043869"],
+Cell[5329, 160, 103, 0, 42, "Text",ExpressionUUID->"05fe6e88-c568-4a93-a5a2-84a9cc5e3206"],
+Cell[5435, 162, 216, 5, 74, "Input",ExpressionUUID->"45e40658-1208-41ef-9871-06d1b6324993"],
+Cell[CellGroupData[{
+Cell[5676, 171, 101, 0, 41, "Subtitle",ExpressionUUID->"704e76be-0ce7-4856-9c30-1eeea9868bf1"],
+Cell[5780, 173, 115, 0, 42, "Text",ExpressionUUID->"11b0acaf-61fc-4c89-99f0-7b7bcaecd7da"],
+Cell[5898, 175, 369, 10, 74, "Input",ExpressionUUID->"5e3a3e58-581e-4f24-826e-b09e62e848ef"],
+Cell[6270, 187, 104, 0, 42, "Text",ExpressionUUID->"374227a8-f4c2-4ba1-b688-75d6356bc460"],
+Cell[6377, 189, 539, 15, 122, "Input",ExpressionUUID->"a6606173-651d-4135-ab6d-7e063c62fabf"],
+Cell[6919, 206, 111, 0, 42, "Text",ExpressionUUID->"8b43d36c-40b1-4618-883a-1ce7ae4858a1"],
+Cell[7033, 208, 203, 4, 74, "Input",ExpressionUUID->"719b06fb-b2ef-451d-804d-95a9f6d72f5f"],
+Cell[7239, 214, 187, 3, 70, "Text",ExpressionUUID->"9c26acd2-d3e2-40bf-8a53-6032c08392e3"],
+Cell[7429, 219, 432, 10, 170, "Input",ExpressionUUID->"7cfc6703-8c98-49ca-a0e1-7d5afa09e9fd"],
+Cell[7864, 231, 108, 0, 42, "Text",ExpressionUUID->"4483691f-a675-4331-ab03-61cb490eaa2f"],
+Cell[7975, 233, 201, 5, 49, "Input",ExpressionUUID->"ed9a4dd4-2c86-4d86-a51e-fd3700cba878"],
+Cell[8179, 240, 86, 0, 42, "Text",ExpressionUUID->"1c7b56e7-37de-4262-95a9-74a0263af99d"],
+Cell[8268, 242, 353, 10, 74, "Input",ExpressionUUID->"ba261568-031f-4382-832c-1ed71f88476b"],
+Cell[8624, 254, 213, 3, 70, "Text",ExpressionUUID->"dc531fd7-e140-434f-9813-fed44f994e3f"],
+Cell[8840, 259, 88, 0, 42, "Text",ExpressionUUID->"d7025d36-9fd9-435f-bf2e-d8eec34043d7"],
+Cell[8931, 261, 165, 4, 49, "Input",ExpressionUUID->"19007cf5-5f94-4989-a2ad-ae78677c0e7e"],
+Cell[9099, 267, 87, 0, 42, "Text",ExpressionUUID->"aa1612bf-caa2-4e48-a4ed-43866d7c0c92"],
+Cell[9189, 269, 267, 7, 74, "Input",ExpressionUUID->"20759280-b86c-4910-a881-bee6e42dbaf1"],
+Cell[9459, 278, 101, 0, 42, "Text",ExpressionUUID->"06010e54-4380-424b-b43b-8cf859cfa362"],
+Cell[9563, 280, 141, 3, 49, "Input",ExpressionUUID->"cc844ccf-5d99-4b19-9100-0f4b65898118"],
+Cell[9707, 285, 174, 3, 70, "Text",ExpressionUUID->"d495372d-2128-47e6-a55a-04905a9eccff"],
+Cell[9884, 290, 171, 4, 49, "Input",ExpressionUUID->"1887b6ff-21aa-4f55-816a-07c3c156fae0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10092, 299, 100, 0, 41, "Subtitle",ExpressionUUID->"b877b8c8-f8ee-48a3-a082-1734aad35c72"],
+Cell[10195, 301, 97, 0, 42, "Text",ExpressionUUID->"4aae566d-2e66-421f-bb68-a7196a3da142"],
+Cell[10295, 303, 251, 6, 74, "Input",ExpressionUUID->"778216ee-6acd-43b7-a4f8-a91b8a3c8448"],
+Cell[10549, 311, 86, 0, 42, "Text",ExpressionUUID->"ff21dc91-ceb3-4fb4-a6da-426b68d29e42"],
+Cell[10638, 313, 144, 3, 49, "Input",ExpressionUUID->"054a6200-1a37-49e2-953e-3b5a66585b81"],
+Cell[10785, 318, 85, 0, 42, "Text",ExpressionUUID->"014099e3-10e3-4b29-bcb8-17677f4514f1"],
+Cell[10873, 320, 333, 6, 122, "Input",ExpressionUUID->"f557ebd6-0c27-452d-bbee-468e67c72f5b"],
+Cell[11209, 328, 151, 2, 42, "Text",ExpressionUUID->"aa958743-4ed4-42d1-88c1-90b8e1dcd6fd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11397, 335, 95, 0, 41, "Subtitle",ExpressionUUID->"45342a3e-f574-43ec-b090-5702238ac08e"],
+Cell[11495, 337, 120, 0, 42, "Text",ExpressionUUID->"96f8c5ef-ec7d-4a69-85b0-c58d13a9e0f8"],
+Cell[11618, 339, 165, 4, 49, "Input",ExpressionUUID->"5ae701ba-0def-4711-8340-4e6e2d86ad61"],
+Cell[11786, 345, 91, 0, 42, "Text",ExpressionUUID->"577b541b-96d7-44be-b36c-c1ae56ef3e58"],
+Cell[11880, 347, 168, 4, 49, "Input",ExpressionUUID->"71e9ecea-5ced-47e1-8668-4bbd613d4090"],
+Cell[12051, 353, 102, 0, 42, "Text",ExpressionUUID->"a3421124-9503-4ae9-999b-9d5f1da53773"],
+Cell[12156, 355, 255, 6, 74, "Input",ExpressionUUID->"0328e805-7a9f-4da9-b798-fab03d2c992b"],
+Cell[12414, 363, 96, 0, 42, "Text",ExpressionUUID->"13d1aa6a-5501-4d9f-b93d-7d77deb6d7cf"],
+Cell[12513, 365, 251, 6, 74, "Input",ExpressionUUID->"7a84a1f3-e81f-4c04-94ac-7d647fa9d5f9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12801, 376, 137, 3, 81, "Subtitle",ExpressionUUID->"1013d489-8725-4683-a20d-aab197c7a390"],
+Cell[12941, 381, 126, 0, 42, "Text",ExpressionUUID->"885130a7-682c-4ab2-8991-b728a869a6a4"],
+Cell[13070, 383, 117, 2, 49, "Input",ExpressionUUID->"ff0dbaac-2ae2-4b1c-b23f-dfee0317cd0e"],
+Cell[13190, 387, 155, 3, 42, "Text",ExpressionUUID->"04a132dd-71e9-4fe4-9e7d-7ce00f9142fb"],
+Cell[13348, 392, 180, 4, 49, "Input",ExpressionUUID->"d531299c-a58a-4ea7-992a-cf594fb5e767"],
+Cell[13531, 398, 101, 0, 42, "Text",ExpressionUUID->"3a152309-e57c-494f-89a9-5309a84277bb"],
+Cell[13635, 400, 175, 4, 49, "Input",ExpressionUUID->"12609218-c163-4a58-a763-c93fa471e31a"],
+Cell[13813, 406, 113, 0, 42, "Text",ExpressionUUID->"29e24909-8759-40b7-ad89-2678ce318f17"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13963, 411, 93, 0, 41, "Subtitle",ExpressionUUID->"b3e15f1f-49a3-4a03-921c-add52f84ed3e"],
+Cell[14059, 413, 190, 3, 70, "Text",ExpressionUUID->"322d78e4-6321-48fb-b7b6-196b656cc99f"],
+Cell[14252, 418, 534, 12, 146, "Input",ExpressionUUID->"4350fb64-251a-46bf-99b8-1af2650573d4"],
+Cell[14789, 432, 103, 0, 42, "Text",ExpressionUUID->"9e70524a-5c72-464d-87a4-a17aeaf2247b"],
+Cell[14895, 434, 323, 5, 98, "Text",ExpressionUUID->"20d246b7-8992-48ba-a6af-0a2b3ea5bc1e"],
+Cell[15221, 441, 267, 6, 74, "Input",ExpressionUUID->"fca8c2d7-fba7-40bf-b681-a37588549830"],
+Cell[15491, 449, 117, 0, 42, "Text",ExpressionUUID->"c6d6ccb7-c912-4a15-ae3d-18a1a45a975c"],
+Cell[15611, 451, 225, 6, 49, "Input",ExpressionUUID->"5f29ef0d-fc88-40f8-b5f5-4cb07f2656a8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15873, 462, 126, 0, 41, "Subtitle",ExpressionUUID->"b32d04aa-778a-4608-8747-5dc93e7d4cd6"],
+Cell[16002, 464, 212, 3, 70, "Text",ExpressionUUID->"50a20c30-aef9-421b-ab72-387082a4e033"],
+Cell[16217, 469, 493, 14, 74, "Input",ExpressionUUID->"7d796813-76df-4102-945e-3aa9ffdb53f5"],
+Cell[16713, 485, 110, 0, 42, "Text",ExpressionUUID->"30803249-3ae8-4ab2-8a92-cff17204853a"],
+Cell[16826, 487, 266, 5, 98, "Input",ExpressionUUID->"6faaa13b-b610-44f5-97ef-42de70a7c84c"],
+Cell[17095, 494, 118, 0, 42, "Text",ExpressionUUID->"7ddef6a1-1860-4ee4-9510-917f80437b8b"],
+Cell[17216, 496, 212, 4, 74, "Input",ExpressionUUID->"dd19b6f2-6081-4a30-ad61-dfe0ee543a9a"],
+Cell[17431, 502, 84, 0, 42, "Text",ExpressionUUID->"3988a67b-95e9-4a8e-b0ac-6a49a6b428fe"],
+Cell[17518, 504, 188, 4, 74, "Input",ExpressionUUID->"8bd41b7f-e887-408e-b347-750dec647392"],
+Cell[17709, 510, 79, 0, 42, "Text",ExpressionUUID->"365d3944-6571-4c38-9d16-b28f679df6bc"],
+Cell[17791, 512, 192, 4, 74, "Input",ExpressionUUID->"04176a22-4d4f-4c20-a839-e82aafc46728"],
+Cell[17986, 518, 199, 3, 70, "Text",ExpressionUUID->"fefc5600-b43a-43fb-8d79-53c25efb061b"],
+Cell[18188, 523, 276, 6, 98, "Input",ExpressionUUID->"55fb391c-d59d-4ffa-ae4a-387b99f4165d"],
+Cell[18467, 531, 155, 2, 42, "Text",ExpressionUUID->"4d15d8fc-a63e-42de-b667-c30098a03e89"],
+Cell[18625, 535, 226, 5, 74, "Input",ExpressionUUID->"d16edd81-6a9b-4987-a4d8-522afe42cd12"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18888, 545, 110, 0, 41, "Subtitle",ExpressionUUID->"00e834be-ad51-4f05-ba2c-504a6999ec2e"],
+Cell[19001, 547, 313, 5, 98, "Text",ExpressionUUID->"9273c645-7d75-4cc3-a560-98af418e4ecb"],
+Cell[19317, 554, 406, 8, 146, "Input",ExpressionUUID->"573acf51-af6d-4c13-8426-40169e432544"],
+Cell[19726, 564, 112, 0, 42, "Text",ExpressionUUID->"7826cf83-30e0-432b-b79e-1aa6724ee370"],
+Cell[19841, 566, 242, 6, 49, "Input",ExpressionUUID->"791f628a-c70a-43d4-b829-7c2f79d07898"],
+Cell[20086, 574, 348, 5, 126, "Text",ExpressionUUID->"ae642322-7e1d-4c79-849f-4b51a623a4c7"],
+Cell[20437, 581, 949, 28, 98, "Input",ExpressionUUID->"9eb2e183-5ee6-42db-be25-f728506bb2f5"],
+Cell[21389, 611, 148, 2, 42, "Text",ExpressionUUID->"a9dd2dec-c688-4468-8039-9395231fa5c1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21574, 618, 96, 0, 41, "Subtitle",ExpressionUUID->"c1728224-fa98-4e6a-83f4-ee0f52e92b11"],
+Cell[21673, 620, 298, 4, 98, "Text",ExpressionUUID->"df513ad6-a5b2-4d76-b90a-65ecf80cdf3d"],
+Cell[21974, 626, 219, 5, 74, "Input",ExpressionUUID->"a3e75baa-bf95-45a5-87b4-c17199406a64"],
+Cell[22196, 633, 140, 2, 42, "Text",ExpressionUUID->"e2237a0c-9e88-45db-8420-223b4eda3211"],
+Cell[22339, 637, 326, 9, 74, "Input",ExpressionUUID->"a9fe8d32-cfd9-4cb7-a67b-7bc5c8dc73d7"],
+Cell[22668, 648, 147, 2, 42, "Text",ExpressionUUID->"c9c5c460-0441-4b5b-9bdd-127fe0a83ca5"],
+Cell[22818, 652, 139, 3, 49, "Input",ExpressionUUID->"74b37882-e748-4958-8f4d-e83795a57c31"],
+Cell[22960, 657, 96, 0, 42, "Text",ExpressionUUID->"9cacaa46-bf3f-48e1-8d14-ae3917e14ec1"],
+Cell[23059, 659, 396, 8, 122, "Input",ExpressionUUID->"d3f92faa-a06f-49db-ae50-41c557f4a804"],
+Cell[23458, 669, 98, 0, 42, "Text",ExpressionUUID->"a7c2db22-e299-46dd-8733-64fed6d84d60"],
+Cell[23559, 671, 172, 4, 49, "Input",ExpressionUUID->"5ccec46e-5017-43f2-9c3d-a0381e9ed77d"],
+Cell[23734, 677, 292, 8, 70, "Text",ExpressionUUID->"9767433f-920d-43e1-8202-d12cb11d3f79"],
+Cell[24029, 687, 212, 4, 49, "Input",ExpressionUUID->"7bff221d-7c7d-4cde-a807-2ca0dc9b37d4"],
+Cell[24244, 693, 148, 2, 42, "Text",ExpressionUUID->"2769d4da-b4fa-4a90-b95b-1ed61c78a68b"],
+Cell[24395, 697, 374, 9, 98, "Input",ExpressionUUID->"1f13136c-4a1d-45d5-bad8-72641bb0871a"],
+Cell[24772, 708, 166, 4, 49, "Input",ExpressionUUID->"9dddb3c1-cbdb-4709-a980-74f60a175423"],
+Cell[24941, 714, 192, 3, 70, "Text",ExpressionUUID->"96bf1846-2c79-40e8-9386-a7544e65d162"],
+Cell[25136, 719, 373, 10, 74, "Input",ExpressionUUID->"f3d95b5a-0065-42ad-aa4f-ac86517b79c1"],
+Cell[25512, 731, 90, 0, 42, "Text",ExpressionUUID->"47968d84-17ef-4cb5-9d9c-d2f3e566394d"],
+Cell[25605, 733, 202, 5, 49, "Input",ExpressionUUID->"21393db6-07e3-43fc-a017-e1c5584f3e2c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25844, 743, 90, 0, 41, "Subtitle",ExpressionUUID->"87496cd5-4306-4223-91b9-a71d0ef8a542"],
+Cell[25937, 745, 266, 4, 98, "Text",ExpressionUUID->"581038e1-ceb8-4827-8294-51718cae5753"],
+Cell[26206, 751, 498, 12, 122, "Input",ExpressionUUID->"de095905-bfe6-4083-a3dc-7ab01c975157"],
+Cell[26707, 765, 250, 6, 70, "Text",ExpressionUUID->"bbcc9f74-523f-4983-acd0-0b2004e2e73f"],
+Cell[26960, 773, 284, 8, 49, "Input",ExpressionUUID->"3adbc909-67d6-44eb-af1c-db8ef80b0278"],
+Cell[27247, 783, 113, 0, 42, "Text",ExpressionUUID->"46d6ef63-bb4f-46ad-a8ef-570f82898aaa"],
+Cell[27363, 785, 247, 5, 74, "Input",ExpressionUUID->"110f5f18-cb77-4b95-ab21-dd053aeabe04"],
+Cell[27613, 792, 93, 0, 42, "Text",ExpressionUUID->"e80ff209-474e-4d97-83e5-1497c540fafa"],
+Cell[27709, 794, 443, 11, 98, "Input",ExpressionUUID->"544357a6-653a-4d5b-a19d-61fded8071fa"],
+Cell[28155, 807, 169, 3, 70, "Text",ExpressionUUID->"77149b9b-97c5-460f-8e0a-1228f182f78f"],
+Cell[28327, 812, 210, 5, 49, "Input",ExpressionUUID->"42bd6c19-301b-4567-a30d-3c3e6109b1ee"],
+Cell[28540, 819, 202, 5, 49, "Input",ExpressionUUID->"c45af608-c89a-4008-8017-a1a74afc4fa7"],
+Cell[28745, 826, 153, 2, 42, "Text",ExpressionUUID->"6dc9e16a-b4e7-4918-be6e-3f6eccac7fca"],
+Cell[28901, 830, 284, 8, 49, "Input",ExpressionUUID->"fd8b645d-ca2f-4bd8-a8b6-956d94205e00"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29222, 843, 87, 0, 41, "Subtitle",ExpressionUUID->"ef3129cd-679a-4ab1-9eab-e9f00795939e"],
+Cell[29312, 845, 117, 0, 42, "Text",ExpressionUUID->"9a63afa8-ae7b-45b8-a130-c9f1f0e866be"],
+Cell[29432, 847, 819, 23, 146, "Input",ExpressionUUID->"b882b6af-3291-44df-a00d-0f9712b135b4"],
+Cell[30254, 872, 105, 0, 42, "Text",ExpressionUUID->"1259ecf8-bbb9-44dc-93fe-74cbcae2fa84"],
+Cell[30362, 874, 745, 22, 98, "Input",ExpressionUUID->"e4d43e56-15cf-403b-af14-fdffbc6c9ad6"],
+Cell[31110, 898, 98, 0, 42, "Text",ExpressionUUID->"92e1842b-e24d-45d2-888f-87d35ef76621"],
+Cell[31211, 900, 366, 11, 49, "Input",ExpressionUUID->"f5d16b97-2f5a-4042-9dc9-b3fbeac0583c"],
+Cell[31580, 913, 108, 0, 42, "Text",ExpressionUUID->"7998971b-55cf-43e2-9234-ef0c3e62944b"],
+Cell[31691, 915, 324, 10, 49, "Input",ExpressionUUID->"269d7d3b-40bb-4a9f-a2a0-d161237d8059"],
+Cell[32018, 927, 116, 0, 42, "Text",ExpressionUUID->"82a0d138-d7ce-4bb9-ba14-96cad2d3ad0b"],
+Cell[32137, 929, 621, 17, 98, "Input",ExpressionUUID->"b3a56920-5b71-4afd-9bce-05659aa58e53"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32795, 951, 119, 0, 41, "Subtitle",ExpressionUUID->"236e72ba-bf29-4830-9b5e-9e3a9b1d7c36"],
+Cell[32917, 953, 280, 6, 70, "Text",ExpressionUUID->"611e336c-dbcd-4f64-9626-4e8ae4985427"],
+Cell[33200, 961, 270, 6, 74, "Input",ExpressionUUID->"97f6fde5-8e1a-43ad-ad5a-fbc12d016e86"],
+Cell[33473, 969, 388, 13, 70, "Text",ExpressionUUID->"b9d9f473-8100-4567-8421-28a9c126686d"],
+Cell[33864, 984, 313, 8, 74, "Input",ExpressionUUID->"bceae37e-c171-472d-8ab6-ef3f2e7cafae"],
+Cell[34180, 994, 217, 5, 42, "Text",ExpressionUUID->"f7078ff4-9b3f-498c-8454-8f77066ca518"],
+Cell[34400, 1001, 171, 4, 49, "Input",ExpressionUUID->"6054afd0-2fd6-49c0-bf10-d588047f80b8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34608, 1010, 88, 0, 41, "Subtitle",ExpressionUUID->"76b4220a-1934-4182-a66e-2ca322274ab2"],
+Cell[34699, 1012, 151, 2, 42, "Text",ExpressionUUID->"4deca52a-8650-4b95-b39c-4b410f377c16"],
+Cell[34853, 1016, 367, 12, 49, "Input",ExpressionUUID->"136936e2-f4a0-424f-bea4-e62bb74cb53c"],
+Cell[35223, 1030, 106, 0, 42, "Text",ExpressionUUID->"f2262c0b-7271-4469-b074-57946a465ff9"],
+Cell[35332, 1032, 538, 16, 49, "Input",ExpressionUUID->"13f0e088-baf5-444a-be4b-f6b2c84aacd3"],
+Cell[35873, 1050, 178, 5, 49, "Input",ExpressionUUID->"14f020ef-3ade-44dc-9614-641485ce3d63"],
+Cell[36054, 1057, 84, 0, 42, "Text",ExpressionUUID->"e54144d1-d8b1-4da8-8e48-0eadf7cf8177"],
+Cell[36141, 1059, 170, 4, 49, "Input",ExpressionUUID->"9d4651df-f183-43a7-878c-76402a4d2df3"],
+Cell[36314, 1065, 109, 0, 42, "Text",ExpressionUUID->"47f1601f-065f-43eb-a608-9fc9db38a508"],
+Cell[36426, 1067, 227, 6, 49, "Input",ExpressionUUID->"604e9615-4da3-48bb-9909-3934875270db"],
+Cell[36656, 1075, 98, 0, 42, "Text",ExpressionUUID->"51e5918d-7111-4be3-be80-5fc423e41fe2"],
+Cell[36757, 1077, 164, 4, 49, "Input",ExpressionUUID->"a5f9477f-d4ae-4301-8a16-5ffbce4a620c"],
+Cell[36924, 1083, 80, 0, 42, "Text",ExpressionUUID->"2fcd8745-1511-451b-97fa-2dfe4d3f6763"],
+Cell[37007, 1085, 331, 9, 49, "Input",ExpressionUUID->"b25ec2a0-cfb6-4b34-944a-70711e02ccfb"],
+Cell[37341, 1096, 165, 4, 49, "Input",ExpressionUUID->"74ad96a8-e206-41df-b588-96d493090655"],
+Cell[37509, 1102, 106, 0, 42, "Text",ExpressionUUID->"d9579193-a8fa-4e93-bd40-7bee1f988989"],
+Cell[37618, 1104, 499, 15, 74, "Input",ExpressionUUID->"5c8d0707-8525-4423-8f91-138502e3c309"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38154, 1124, 82, 0, 41, "Subtitle",ExpressionUUID->"12f987be-23ca-427a-aef3-5eb6a0f62979"],
+Cell[38239, 1126, 263, 4, 98, "Text",ExpressionUUID->"3a4b5f50-f74d-415b-b393-a786a4da367a"],
+Cell[38505, 1132, 388, 6, 98, "Text",ExpressionUUID->"dd94d77b-e528-471c-a41e-8bac16dff530"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
