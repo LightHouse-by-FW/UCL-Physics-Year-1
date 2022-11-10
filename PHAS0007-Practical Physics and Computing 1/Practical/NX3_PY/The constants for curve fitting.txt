@@ -1,0 +1,17 @@
+For low damping
+lambda = 9.524316202822241, 
+moment of inertia = -2.1692695296735325, 
+torsion constant = -44.14314902666002, 
+max torque = 56.2506042023026
+
+For medium damping 
+lambda = 5.467857630766342, 
+moment of inertia = -1.0839871332801763, 
+torsion constant = -24.331465060082223, 
+max torque = 31.68210341607846
+
+For high damping 
+lambda = -2.583931083192852, 
+moment of inertia = 0.4794942784937831, 
+torsion constant = 11.093258050569101, 
+max torque = 14.488841259828996
